@@ -39,9 +39,6 @@ export class MediaCard extends Component<{}, {}> {
             }
             let image: any = new Image(50, 30);
             image.src = "../static/fire-emoji.png"
-            //ctx.rect(20, 20, 150, 100);
-            ctx.fillStyle = "red";
-            //ctx.fill();
             switch(emoji) {
                 case "shit": {
                     ctx.fillText("💩", random(0, canvas.width), random(0.8 * canvas.height, canvas.height) );
