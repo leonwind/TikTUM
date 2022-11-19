@@ -10,7 +10,7 @@ import {Footer} from "./footer";
 
 export default function Feed() {
 
-  const conts = [matmatVid, matvecVid, hadamardVid, planetEarth];
+  const conts = [matvecVid, matmatVid, hadamardVid, planetEarth];
 
   return (
     <div>
