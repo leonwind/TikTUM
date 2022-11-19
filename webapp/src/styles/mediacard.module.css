@@ -11,6 +11,7 @@
 }
 
 .buttons {
+    color: white;
     position: absolute;
     right:10px;
     bottom:80px;
