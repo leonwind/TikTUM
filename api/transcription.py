@@ -5,7 +5,7 @@ import whisper
 model = whisper.load_model("base")
 
 
-def _extract_audio(video_path: str, audio_path: str) -> None:
+def _extract_audio(video_path: str, audio_path: str, start_time: float = 0, end_time: float = -1) -> None:
     subprocess.run(["ffmpeg", "-i", video_path, "-t", "1", "-acodec", "copy", audio_path])
 
 

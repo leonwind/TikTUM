@@ -1,3 +1,4 @@
+import os.path
 from datetime import datetime
 
 from flask import Flask, request
@@ -5,12 +6,15 @@ from flask_cors import CORS
 
 from api.comments import comments_object_from_txt
 from api.qa_bot import ask_question
+from api.segmentation import extract_title_from_frame
 from api.transcription import get_transcription
 
 app = Flask(__name__)
 cors = CORS(app)
 COMMENTS_DIR = 'comments'
 VIDEOS_DIR = 'videos'
+FRAMES_DIR = 'frames'
+FPS = 25.0
 
 
 # Endpoint to post comment on video with video_id
@@ -25,9 +29,9 @@ def post_comment(video_id):
     answer = None
     if comment.endswith('?'):
         # Get extra information for video_id
-        extra_information = get_transcription(f'{VIDEOS_DIR}/{video_id}.mp4', 0).get("text")
+        # extra_information = get_transcription(f'{VIDEOS_DIR}/{video_id}.mp4', 0).get("text")
         # Ask question to GPT-3
-        answer = ask_question(comment, extra_information)
+        answer = ask_question(comment)
     # Save comment to a txt file
     with open(f'{COMMENTS_DIR}/{video_id}.txt', 'a+') as f:
         f.write(f'{username}\t{comment}\t{timestamp}\n')
@@ -66,3 +70,20 @@ def query_lecture(video_id, query):
         "timestamp": timestamp,
         "text": text
     }
+
+
+@app.route('/video/<video_id>/outline', methods=['GET'])
+def lecture_outline(video_id):
+    frames_path = f'{FRAMES_DIR}/{video_id}'
+    if not os.path.exists(frames_path):
+        return 'Video does not exist', 404
+    # Loop over frames
+    frame_paths = [frame_path for frame_path in os.listdir(frames_path) if frame_path.endswith('.jpg')]
+    outline = []
+    for frame_path in frame_paths:
+        outline.append({
+            "timestamp": float(frame_path[6:-4]) / FPS,
+            "title": extract_title_from_frame(os.path.join(frames_path, frame_path)),
+        })
+
+    return outline
