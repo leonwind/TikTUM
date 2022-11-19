@@ -2,7 +2,8 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
 import { useState } from 'react';
-import logo from "../static/tiktum.png";
+// import logo from "../static/tiktum.png";
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import { Link } from 'react-router-dom';
 
 const StyledFab = styled(Fab)({
@@ -22,8 +23,9 @@ export const Footer = () => {
     return (
     <React.Fragment>
       <Link to='/'>
-        <StyledFab color="secondary" aria-label="add">
-            <img src={logo} alt="logo" width="50px" height="50px"/>
+        <StyledFab color="primary" aria-label="add">
+{/*             <img src={logo} alt="logo" width="50px" height="50px"/> */}
+            <AutoStoriesIcon />
         </StyledFab>
       </Link>
     </React.Fragment>

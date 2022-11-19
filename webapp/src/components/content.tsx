@@ -104,7 +104,7 @@ export const MediaCard = ({video, onToggleComments}: Props) => {
                 <div className={styles.emojis}>
                     <div onClick={() => onEmojiyClick("fire")}>🔥</div>
                     <div onClick={() => onEmojiyClick("joy")}>😂</div>
-                    <div onClick={() => onEmojiyClick("shit")}>💩</div>
+                    <div onClick={() => onEmojiyClick("shit")}>🤔</div>
                 </div>
 
                 <div className={styles.rightColumn}>
