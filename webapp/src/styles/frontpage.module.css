@@ -1,0 +1,48 @@
+.body {
+    height: 100%;
+    min-height: 100vh;
+    background-color: #1c1c1c;
+}
+
+.logo {
+    padding-top: 5%;
+    text-align: center;
+}
+
+.headline {
+    color: #e7e7e7;
+    opacity: 0.87;
+    text-align: center;
+}
+
+.mediumText {
+    color: #e7e7e7;
+    opacity: 0.6;
+    text-align: center;
+    margin: auto;
+    max-width: 700px;
+}
+
+.searchForm {
+    width: 50%;
+    min-width: 350px;
+    margin: auto;
+    color: #ffffff !important;
+    background-color: #333333 !important;
+    border: 0px !important;
+    border-radius: 25px !important;
+    height: 50px;
+}
+
+.searchLogo {
+    color: #ffffff !important;
+    background-color: #333333 !important;
+    opacity: 0.66;
+    border: 0px !important;
+    border-radius: 25px !important;
+    align: right;
+}
+
+.searchForm:focus {
+    box-shadow: none !important;
+}
