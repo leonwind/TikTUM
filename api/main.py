@@ -19,8 +19,8 @@ TRANSCRIPTION_DIR = "transcriptions"
 OUTLINES_DIR = 'outlines'
 
 
-def get_transcription(video_id) -> dict:
-    transcription_path = os.path.join(TRANSCRIPTION_DIR, video_id + ".json")
+def get_transcription(lecture_id) -> dict:
+    transcription_path = os.path.join(TRANSCRIPTION_DIR, lecture_id + ".json")
     if not os.path.exists(transcription_path):
         return {}
     with open(transcription_path, "r") as f:
@@ -62,10 +62,10 @@ def get_comments(video_id):
     return comments
 
 
-@app.route('/video/<video_id>/search/<query>', methods=['GET'])
-def query_lecture(video_id, query):
+@app.route('/lecture/<lecture_id>/search/<query>', methods=['GET'])
+def query_lecture(lecture_id, query):
     # Get transcript
-    transcript_response = get_transcription(f'{VIDEOS_DIR}/{video_id}.mp4')
+    transcript_response = get_transcription(lecture_id)
     segments = transcript_response.get("segments")
     # Search for query
     timestamp = -1
@@ -82,16 +82,16 @@ def query_lecture(video_id, query):
     }
 
 
-@app.route('/video/<video_id>/outline', methods=['GET'])
-def lecture_outline(video_id):
-    outline_path = os.path.join(OUTLINES_DIR, video_id + ".json")
+@app.route('/lecture/<lecture_id>/outline', methods=['GET'])
+def lecture_outline(lecture_id):
+    outline_path = os.path.join(OUTLINES_DIR, lecture_id + ".json")
     if os.path.exists(outline_path):
         with open(outline_path, "r") as f:
             return json.load(f)
 
-    frames_path = f'{FRAMES_DIR}/{video_id}'
+    frames_path = os.path.join(FRAMES_DIR, lecture_id)
     if not os.path.exists(frames_path):
-        return 'Video does not exist', 404
+        return 'Lecture does not exist', 404
     # Loop over frames
     frame_paths = [frame_path for frame_path in os.listdir(frames_path) if frame_path.endswith('.jpg')]
     outline = []
