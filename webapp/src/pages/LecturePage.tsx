@@ -5,12 +5,21 @@ import { useEffect, useRef, useState } from "react";
 
 const LecturePage = () => {
     const videoRef = useRef<any>();
+    const [videoTime, setVideoTime] = useState(0);
     const [query, setQuery] = useState('')
     const [outline, setOutline] = useState<any[]>([])
     const [result, setResult] = useState<any>([])
 
     const handleChange = (event: any) => {
         setQuery(event.target.value);
+    }
+
+    const handleProgress = (event: any) => {
+        if (isNaN(event.target.duration)) {
+            setVideoTime(0)
+            return
+        }
+        setVideoTime(event.target.currentTime)
     }
 
     const makeSeekFunction = (time: number) => {
@@ -49,7 +58,7 @@ const LecturePage = () => {
     return (
         <div className="LecturePage">
             <div className="LecturePage__video">
-               <video src={lectureVid} controls/>
+               <video src={lectureVid} controls ref={videoRef} onProgress={handleProgress} />
             </div>
 
             <div className="LecturePage__content">
