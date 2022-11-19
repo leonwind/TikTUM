@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 
 const LecturePage = () => {
     const videoRef = useRef<any>();
-    const [videoTime, setVideoTime] = useState(0);
     const [query, setQuery] = useState('')
     const [outline, setOutline] = useState<any[]>([])
     const [result, setResult] = useState<any>([])
@@ -34,12 +33,6 @@ const LecturePage = () => {
             .catch(error => console.log(error))
     }
 
-    const handleProgress = (event: any) => {
-        if (isNaN(event.target.duration)) 
-            setVideoTime(0);
-        setVideoTime(event.target.currentTime);
-    }
-
     const zeroPad = (num: number, places: number) => String(num).padStart(places, '0')
 
     const secondsToHMinSec = (seconds: number) => {
@@ -56,12 +49,7 @@ const LecturePage = () => {
     return (
         <div className="LecturePage">
             <div className="LecturePage__video">
-               <video 
-                src={lectureVid} 
-                ref={videoRef}
-                onProgress={handleProgress}
-                controls
-                />
+               <video src={lectureVid} controls/>
             </div>
 
             <div className="LecturePage__content">
