@@ -19,18 +19,10 @@ const LecturePage = () => {
     }
 
     const fetchOutline = () => {
-        setOutline([
-            {'timestamp': 0, 'title': 'Introduction'},
-            {'timestamp': 64, 'title': 'Linear Algebra'},
-            {'timestamp': 280, 'title': 'Calculus'},
-            {'timestamp': 589, 'title': 'Probability'},
-            {'timestamp': 1000, 'title': 'Optimization'},
-            {'timestamp': 1200, 'title': 'Convex Optimization'},
-            {'timestamp': 1400, 'title': 'Linear Optimization'},
-            {'timestamp': 1600, 'title': 'Duality'},
-            {'timestamp': 1800, 'title': 'Convex Sets'},
-            {'timestamp': 2000, 'title': 'Convex Functions'},
-        ])
+        fetch('http://127.0.0.1:5000/video/id/outline')
+            .then(response => response.json())
+            .then(data => setOutline(data))
+            .catch(error => console.log(error))
     }
 
     const handleProgress = (event: any) => {
