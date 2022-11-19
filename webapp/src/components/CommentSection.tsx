@@ -18,7 +18,7 @@ const CommentSection = () => {
     }
 
     const fetchComments = () => {
-        fetch('http://localhost:3000/comments')
+        fetch('http://127.0.0.1:5000/video/id/comments')
             .then(response => response.json())
             .then(data => {
                 setUserComments(data['comments'])
@@ -27,7 +27,7 @@ const CommentSection = () => {
     }
 
     const postComment = (user: string, comment: string) => {
-        fetch('http://localhost:3000/comments', {
+        fetch('http://127.0.0.1:5000/video/id/comment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -47,6 +47,10 @@ const CommentSection = () => {
         postComment('student', comment)
     }
 
+    useEffect(() => {
+        fetchComments()
+    }, [])
+
     return (
         <div className="CommentSection">
             <main>
@@ -57,23 +61,25 @@ const CommentSection = () => {
 
                 {collapsed !== true && (<>
                     <div className="CommentSection__comments">
-                        <div className="CommentSection__comment">
-                            <div className="CommentSection__comment__username">
-                                ein user
+                        {userComments.map((comment: any) => (
+                            <div className="CommentSection__comment">
+                                <div className="CommentSection__comment__username">
+                                    {comment['username']}
+                                </div>
+                                <div className="CommentSection__comment__text">
+                                    {comment['comment']}
+                                </div>
                             </div>
-                            <div className="CommentSection__comment__text">
-                                wtf
-                            </div>
-                        </div>
-
-                        <div className="CommentSection__comment">
+                        ))}
+                        
+                        {/* <div className="CommentSection__comment">
                             <div className="CommentSection__comment__username">
                                 anderer user
                             </div>
                             <div className="CommentSection__comment__text">
                                 omg. soo geil xD
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="CommentSection__input">
                         <TextField 

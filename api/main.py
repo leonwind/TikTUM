@@ -1,11 +1,13 @@
 from datetime import datetime
 
 from flask import Flask, request
+from flask_cors import CORS
 
 from api.comments import comments_object_from_txt
 from api.qa_bot import ask_question
 
 app = Flask(__name__)
+cors = CORS(app)
 COMMENTS_DIR = 'comments'
 
 
