@@ -7,8 +7,8 @@
 
 .video {
     width: 100vw;
-    height: auto;
-    object-fit: cover;
+    height: 100vh;
+    object-fit: fill;
 }
 
 .buttons {
