@@ -2,6 +2,7 @@ import lectureVid from "../static/lecture_small.mp4"
 import './LecturePage.scss'
 import { Button, TextField } from '@mui/material';
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const LecturePage = () => {
     const videoRef = useRef<any>();
@@ -79,17 +80,16 @@ const LecturePage = () => {
                     <div className="LecturePage__result">
                     <h3>Search results</h3>
                     {result.map((item: any, index: any) => (
-                        <div 
-                            className="LecturePage__result__item" 
-                            key={index} 
-                        >
-                            <div className="time">
-                                <div className="badge">
-                                    {secondsToHMinSec(item['timestamp'])}
+                        <Link to='/feed' key={index}>
+                            <div className="LecturePage__result__item">
+                                <div className="time">
+                                    <div className="badge">
+                                        {secondsToHMinSec(item['timestamp'])}
+                                    </div>
                                 </div>
+                                <div className="text">{item['text']}</div>
                             </div>
-                            <div className="text">{item['text']}</div>
-                        </div>
+                        </Link>
                     ))}
                     </div>
                 )}
