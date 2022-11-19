@@ -18,7 +18,7 @@
 
 .emojis {
     position: absolute;
-    z-index: 99999;
+    z-index: 2;
     left:10px;
     top:10px;
 }
