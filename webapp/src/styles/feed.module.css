@@ -1,0 +1,8 @@
+.container {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    max-height: 100vh;
+    overflow-y: scroll;
+    height:100vh;
+    width: 100vw;
+}

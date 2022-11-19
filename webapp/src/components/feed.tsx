@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { MediaCard } from './content';
 import SelectInput from '@mui/material/Select/SelectInput';
+import styles from "../styles/feed.module.css";
 
 
 export default function Feed() {
@@ -19,30 +20,10 @@ export default function Feed() {
 
   return (
     <Stack
-      onScroll={(e) => console.log("scroll")}
-      direction="column"
-      justifyContent="flex-start"
-      alignItems="center"
-      spacing={1}
-    >
+        className={styles.container}
+        dir="ltr">
       {conts.map(el =>
-        <Box
-          // ref={contRefs[i]}
-          key={el}
-          sx={{
-            border: '3px solid black'
-          }}
-          margin="0"
-          padding="0"
-          alignItems="center"
-          display="flex"
-          justifyContent="center"
-          height="100vh"
-          width="100vw"
-          maxWidth="600px"
-        >
           <MediaCard />
-        </Box>
       )}
     </Stack>
   );
