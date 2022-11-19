@@ -11,16 +11,19 @@ from api.segmentation import extract_title_from_frame
 
 app = Flask(__name__)
 cors = CORS(app)
+FPS = 25.0
+
 COMMENTS_DIR = 'comments'
 VIDEOS_DIR = 'videos'
 FRAMES_DIR = 'frames'
-FPS = 25.0
-TRANSCRIPTION_DIR = "transcriptions"
+LECTURE_TRANSCRIPTION_DIR = "lecture_transcriptions"
+VIDEO_TRANSCRIPTION_DIR = "video_transcriptions"
 OUTLINES_DIR = 'outlines'
 
 
-def get_transcription(lecture_id) -> dict:
-    transcription_path = os.path.join(TRANSCRIPTION_DIR, lecture_id + ".json")
+def get_transcription(content_id, is_lecture: bool = True) -> dict:
+    transcriptions_dir = LECTURE_TRANSCRIPTION_DIR if is_lecture else VIDEO_TRANSCRIPTION_DIR
+    transcription_path = os.path.join(transcriptions_dir, content_id + ".json")
     if not os.path.exists(transcription_path):
         return {}
     with open(transcription_path, "r") as f:
@@ -39,9 +42,9 @@ def post_comment(video_id):
     answer = None
     if comment.endswith('?'):
         # Get extra information for video_id
-        # extra_information = get_transcription(f'{VIDEOS_DIR}/{video_id}.mp4').get("text")
+        extra_information = get_transcription(video_id, is_lecture=False).get("text")
         # Ask question to GPT-3
-        answer = ask_question(comment)
+        answer = ask_question(comment, extra_information)
     # Save comment to a txt file
     with open(f'{COMMENTS_DIR}/{video_id}.txt', 'a+') as f:
         f.write(f'{username}\t{comment}\t{timestamp}\n')
