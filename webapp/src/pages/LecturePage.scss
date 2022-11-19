@@ -1,0 +1,54 @@
+.LecturePage {
+    height: 100vh;
+    .LecturePage__video {
+        position: sticky;
+        top: 0;
+
+        video {
+            width: 100vw;
+        }   
+    }
+
+    .LecturePage__content {
+        padding: 0.5em 1em;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-end;
+
+        .LecturePage__outline {
+            display: flex;
+            flex-direction: column;
+
+            .LecturePage__outline__item {
+                display: flex;
+                flex-direction: row;
+                margin: 0.2em 0;
+
+                .time {
+                    font-family: Courier, monospace;
+                    padding: 0 0.1em;
+                    background-color: #ddd;
+                    border-radius: 3px;
+
+                    margin-right: 0.5em;
+                }
+            }
+        }
+
+        .LecturePage__result {
+            text-align: left;
+        }
+
+        .LecturePage__search {
+            position: sticky;
+            bottom: 1em;
+            display: flex;
+            justify-content: space-between;
+    
+            .LecturePage__search__field{
+                max-width: 90vw;
+                margin-right: 0.5em;
+            }
+        }
+    }
+}

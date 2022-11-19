@@ -71,15 +71,6 @@ const CommentSection = () => {
                                 </div>
                             </div>
                         ))}
-                        
-                        {/* <div className="CommentSection__comment">
-                            <div className="CommentSection__comment__username">
-                                anderer user
-                            </div>
-                            <div className="CommentSection__comment__text">
-                                omg. soo geil xD
-                            </div>
-                        </div> */}
                     </div>
                     <div className="CommentSection__input">
                         <TextField 

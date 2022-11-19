@@ -20,3 +20,11 @@ student	What does Nathi stand for?	1668857680
 TutorBot	Nathi stands for the National Certificate in Horticulture.	1668857682
 student	What is the name Nathi short for?	1668857697
 TutorBot	Nathi is a short form of the name Nathaniel.	1668857699
+student	should we get a second portion for lunch?	1668858317
+TutorBot	It depends on how much food you have already eaten and how hungry you are.	1668858319
+student	are you good at math?	1668858378
+TutorBot	I am not good at math.	1668858380
+student	Why are you gae?	1668858387
+TutorBot	I'm not sure what you're asking.	1668858389
+student	what is love?	1668858482
+TutorBot	Love is a feeling of strong attachment or admiration and caring for someone or something.	1668858484
