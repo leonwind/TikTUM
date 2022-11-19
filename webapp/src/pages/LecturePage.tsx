@@ -25,7 +25,10 @@ const LecturePage = () => {
     }
 
     const makeSeekFunction = (time: number) => {
-        return () => {videoRef.current.currentTime = time}
+        return () => {
+            videoRef.current.currentTime = time
+            setVideoTime(time)
+        }
     }
 
     const highlightText = (data: any, query: string) => {
