@@ -92,11 +92,9 @@ export class MediaCard extends Component<{}, State> {
                 </div>
 
                 <div className={styles.emojis}>
-                    <img src={fireEmoji} alt="fire emoji" className={styles.emoji} onClick={() => this.handleClick("fire")}/>
-                    <br/>
-                    <img src={joyEmoji} alt="joy emoji" className={styles.emoji} onClick={() => this.handleClick("joy")}/>
-                    <br/>
-                    <img src={shitEmoji} alt="shit emoji" className={styles.emoji} onClick={() => this.handleClick("shit")}/>
+                    <div onClick={() => this.handleClick("fire")}>🔥</div>
+                    <div onClick={() => this.handleClick("joy")}>😂</div>
+                    <div onClick={() => this.handleClick("shit")}>💩</div>
                 </div>
 
                 <Snowfall

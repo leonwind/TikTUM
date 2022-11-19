@@ -51,3 +51,9 @@ student	why is there a subway instead of a lecture???	1668879414
 TutorBot	I'm not sure.	1668879416
 student	why is there a subway instead of a lecture???	1668879414
 TutorBot	I'm not sure.	1668879416
+student	what does optiver do?	1668879796
+TutorBot	Optiver is a global proprietary trading firm that specializes in trading derivatives and other financial instruments.	1668879798
+student	is it ethical what optiver does?	1668879810
+TutorBot	There is no definitive answer to this question as ethicality is subjective. Some people may view Optiver's actions as ethical, while others may not.	1668879813
+student	why are you geh?	1668879861
+TutorBot	I am geh because I am a geh.	1668879864
