@@ -39,12 +39,12 @@ export const Footer = () => {
 
     return (
     <React.Fragment>
+      {showComments && <CommentSection onClose={() => {setShowComments(false)}}/>}
       <CssBaseline />
       <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
         <Toolbar>
           <IconButton color="inherit" aria-label="open drawer">
             <CommentIcon onClick={() => {setShowComments(!showComments)}}/>
-              {showComments && <CommentSection/>}
           </IconButton>
           <StyledFab  color="secondary" aria-label="add" href={"/"}>
               <img src={logo} alt="logo" width="50px" height="50px" className={styles.img}/>

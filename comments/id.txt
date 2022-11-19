@@ -32,3 +32,16 @@ student	what is this lecture about?	1668871909
 TutorBot	This lecture is about the history of the English language.	1668871912
 student	why is a subway in this lecture?	1668872013
 TutorBot	There is no clear answer, but one possibility is that the subway is meant to symbolize the underground or hidden aspects of the city.	1668872017
+student	what is she talking about?	1668873990
+TutorBot	I don't know.	1668873992
+student	does it work now?	1668875825
+TutorBot	Yes, it does work now.	1668875827
+student	hey?	1668875844
+TutorBot	Hey there!	1668875845
+student	What is a matrix vector multiplication and can you eat that?	1668875965
+TutorBot	A matrix vector multiplication is a mathematical operation that multiplies a matrix by a vector. You cannot eat that.	1668875968
+student	why cant i eat a matrix vector multiplication?	1668876021
+TutorBot	There is no definitive answer to this question since it depends on the specific matrix and vector involved. However, one potential reason why you might not be able to eat a matrix vector multiplication is that the resulting product could be very large and unwieldy, making it difficult to consume. Additionally, the product could contain a large number of decimal places which could make it difficult to chew and digest.	1668876026
+student	cool	1668876854
+student	and can you serve me a matrix vector multiplication for dinner?	1668876869
+TutorBot	No, I cannot serve you a matrix vector multiplication for dinner.	1668876872
