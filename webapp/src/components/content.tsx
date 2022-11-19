@@ -76,11 +76,9 @@ export class MediaCard extends Component<{}, {}> {
                 </div>
 
                 <div className={styles.emojis}>
-                    <img src={fireEmoji} alt="fire emoji" className={styles.emoji} onClick={() => handleClick("fire")}/>
-                    <br/>
-                    <img src={joyEmoji} alt="joy emoji" className={styles.emoji} onClick={() => handleClick("joy")}/>
-                    <br/>
-                    <img src={shitEmoji} alt="shit emoji" className={styles.emoji} onClick={() => handleClick("shit")}/>
+                    <img src={fireEmoji} alt="fire emoji" className={styles.emoji}/>
+                    <img src={joyEmoji} alt="fire emoji" className={styles.emoji}/>
+                    <img src={shitEmoji} alt="fire emoji" className={styles.emoji}/>
                 </div>
 
                 <CommentSection />
