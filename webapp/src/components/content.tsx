@@ -1,17 +1,11 @@
 import React, {ChangeEvent, Component, FormEvent} from "react";
 import styles from "../styles/mediacard.module.css";
 import AddCommentIcon from '@mui/icons-material/AddComment';
-import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import AddReactionIcon from '@mui/icons-material/AddReaction';
 import Snowfall from "react-snowfall";
 
-import demoVid from "../static/demo_vid.mp4";
 import fireEmoji from "../static/fire-emoji.png"
 import joyEmoji from "../static/joy-emoji.png"
 import shitEmoji from "../static/shit-emoji.png"
-import CommentSection from "./CommentSection";
-import {Footer} from "./footer";
 
 interface State {
     shitCount: number,
@@ -64,16 +58,12 @@ export class MediaCard extends Component<Props, State> {
                     break;
                 }
             }
-            console.log(this.state);
-
     }
 
 
     render() {
         const shit: CanvasImageSource = document.createElement('img')
         shit.src = shitEmoji;
-        shit.style.width = "100%";
-        shit.style.height = "100%";
         const joy: CanvasImageSource = document.createElement('img')
         joy.src = joyEmoji;
         const fire: CanvasImageSource = document.createElement('img')
@@ -85,17 +75,8 @@ export class MediaCard extends Component<Props, State> {
                     <source src={this.props.video} type="video/mp4" className={styles.video}/>
                 </video>
 
-                <div className={styles.buttons}>
-                    <AddCommentIcon/>
-                    <br/>
-                    <PriorityHighIcon/>
-                    <br/>
-                    <AutoAwesomeIcon/>
-                    <br/>
-                    <AddReactionIcon/>
-                </div>
-
                 <div className={styles.emojis}>
+                    <AddCommentIcon/>
                     <div onClick={() => this.handleClick("fire")}>🔥</div>
                     <div onClick={() => this.handleClick("joy")}>😂</div>
                     <div onClick={() => this.handleClick("shit")}>💩</div>
@@ -116,59 +97,7 @@ export class MediaCard extends Component<Props, State> {
                   snowflakeCount={this.state.joyCount}
                   radius={[30.0, 30.0]}
                   images={[joy]}/>
-
-                <Footer/>
             </div>
         );
     }
 }
-
-/*
-
-
-export default function ImgMediaCard() {
-  return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        alt="hot prof"
-        height="400px"
-        image={prof}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          What is a Matrix?
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Learn about Linear Algebra today. Best homework gets to date me.
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Go to lecture</Button>
-      </CardActions>
-    </Card>
-
-
-    <Card className={styles.body}>
-                    <CardMedia
-                        component="video"
-                        image={demoVid}
-                        autoPlay/>
-
-                      <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                          What is a Matrix?
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          Learn about Linear Algebra today. Best homework gets to date me.
-                        </Typography>
-                      </CardContent>
-                      <CardActions>
-                        <Button size="small">Share</Button>
-                        <Button size="small">Go to lecture</Button>
-                      </CardActions>
-                    </Card>
-  );
-}
- */
