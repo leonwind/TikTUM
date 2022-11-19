@@ -16,6 +16,7 @@ import demoVid from "../static/demo_vid.mp4";
 import fireEmoji from "../static/fire-emoji.png"
 import joyEmoji from "../static/joy-emoji.png"
 import shitEmoji from "../static/shit-emoji.png"
+import CommentSection from "./CommentSection";
 
 export class MediaCard extends Component<{}, {}> {
     render() {
@@ -42,6 +43,8 @@ export class MediaCard extends Component<{}, {}> {
                     <br/>
                     <img src={shitEmoji} alt="fire emoji" className={styles.emoji}/>
                 </div>
+
+                <CommentSection />
             </div>
         );
     }
