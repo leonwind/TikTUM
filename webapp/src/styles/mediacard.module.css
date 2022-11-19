@@ -13,14 +13,14 @@
 .buttons {
     position: absolute;
     right:10px;
-    top:10px;
+    bottom:80px;
 }
 
 .emojis {
     position: absolute;
     z-index: 2;
     left:10px;
-    top:10px;
+    bottom:80px;
 }
 
 .emoji {

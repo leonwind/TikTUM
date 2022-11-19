@@ -11,6 +11,7 @@ import fireEmoji from "../static/fire-emoji.png"
 import joyEmoji from "../static/joy-emoji.png"
 import shitEmoji from "../static/shit-emoji.png"
 import CommentSection from "./CommentSection";
+import {Footer} from "./footer";
 
 interface State {
     shitCount: number,
@@ -114,7 +115,7 @@ export class MediaCard extends Component<{}, State> {
                   radius={[30.0, 30.0]}
                   images={[joy]}/>
 
-                <CommentSection/>
+                <Footer/>
             </div>
         );
     }

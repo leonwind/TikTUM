@@ -1,0 +1,13 @@
+.footer {
+    max-height: 70vh;
+    position: fixed;
+    overflow-y: scroll;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+}
+
+.img {
+    border-radius: 50%;
+}
