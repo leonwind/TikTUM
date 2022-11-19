@@ -53,13 +53,7 @@ const CommentSection = () => {
 
     return (
         <div className="CommentSection">
-            <main>
-                <div className="CommentSection__header" onClick={handleCommentToggle}>
-                    <h3>Comments</h3>
-                    <UnfoldMoreIcon />
-                </div>
 
-                {collapsed !== true && (<>
                     <div className="CommentSection__comments">
                         {userComments.map((comment: any) => (
                             <div className="CommentSection__comment">
@@ -87,8 +81,6 @@ const CommentSection = () => {
                             onClick={handleSubmit}
                         >send</Button>
                     </div>
-                </>)}
-            </main>
         </div>
     )
 }
