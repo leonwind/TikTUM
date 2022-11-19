@@ -63,3 +63,11 @@ student	very nice?	1668881880
 TutorBot	Thank you!	1668881882
 student	why do i not understand this?	1668881902
 TutorBot	There could be a number of reasons why you do not understand this. It could be that the material is too difficult, or that it is presented in a way that is confusing. It is also possible that you simply do not have enough background knowledge to understand the concept. If you are having trouble understanding something, it is important to ask for help from a teacher or tutor.	1668881907
+student	what is a matrix?	1668894213
+TutorBot	A matrix is a rectangular array of numbers that is used to represent linear equations.	1668894215
+student	can i eat a small matrix vector multiplication?	1668894276
+TutorBot	No, you cannot eat a small matrix vector multiplication.	1668894277
+student	why cant i eat a small matrix vector multiplication?	1668894300
+TutorBot	There is no reason why you cannot eat a small matrix vector multiplication.	1668894301
+student	was jetzt?	1668894312
+TutorBot	I'm not sure what you're asking.	1668894313

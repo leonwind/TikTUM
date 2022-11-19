@@ -1,4 +1,4 @@
-import React, {ChangeEvent, Component, FormEvent, useRef, useState} from "react";
+import React, {useRef, useState, useEffect} from "react";
 import styles from "../styles/mediacard.module.css";
 import AddCommentIcon from '@mui/icons-material/AddComment';
 import Snowfall from "react-snowfall";
@@ -55,6 +55,7 @@ export const MediaCard = ({video, onToggleComments}: Props) => {
         const [joyCount, setJoyCount] = useState(0);
 
         const videoRef = useRef<any>();
+
         const handleChange = () => {
             if (videoRef !== null) {
                 if (videoRef.current.paused) {
@@ -64,6 +65,34 @@ export const MediaCard = ({video, onToggleComments}: Props) => {
                 }
             }
         }
+
+        const callbackFn = (entries: any) => {
+            const [entry] = entries;
+            if (!entry.isIntersecting) {
+                videoRef.current.pause()
+            } else {
+                setTimeout(() => {
+                    videoRef.current.play()
+                }, 300)
+            }
+        }
+
+        useEffect(() => {
+            const options = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.1,
+            }
+
+            const observer = new IntersectionObserver(callbackFn, options)
+            if (videoRef.current) observer.observe(videoRef.current)
+
+            return () => {
+                if (videoRef.current) observer.unobserve(videoRef.current)
+            }
+        }, [])
+
+
         return (
             <div className={styles.body}>
                 <video className={styles.video} onClick={handleChange} ref={videoRef}>
