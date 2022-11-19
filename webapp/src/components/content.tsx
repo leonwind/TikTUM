@@ -20,8 +20,51 @@ import CommentSection from "./CommentSection";
 
 export class MediaCard extends Component<{}, {}> {
     render() {
+
+        let random = (min: number, max: number): number => {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
+        const handleClick = (emoji: any) => {
+            const canvas: HTMLCanvasElement | null = document.getElementById("canvas") as HTMLCanvasElement;
+            if (canvas === null) {
+                console.log("Canvas is null");
+                return;
+            }
+
+            const ctx: CanvasRenderingContext2D | null = canvas.getContext("2d");
+            if (ctx === null) {
+                console.log("Canvas context is null");
+                return;
+            }
+            let image: any = new Image(50, 30);
+            image.src = "../static/fire-emoji.png"
+            //ctx.rect(20, 20, 150, 100);
+            ctx.fillStyle = "red";
+            //ctx.fill();
+            switch(emoji) {
+                case "shit": {
+                    ctx.fillText("💩", random(0, canvas.width), random(0.8 * canvas.height, canvas.height) );
+                    break;
+                }
+                case "joy": {
+                    ctx.fillText("😂", random(0, canvas.width), random(0.8 * canvas.height, canvas.height) );
+                    break;
+                }
+                case "fire": {
+                    ctx.fillText("🔥", random(0, canvas.width), random(0.8 * canvas.height, canvas.height) );
+                    break;
+                }
+                default: {
+                    console.log("Emoji not found: ", emoji);
+                }
+            }
+            //ctx.fillText("hallo welt", 20, 20, );
+            console.log("Spawn emoji " + emoji);
+        }
+
         return (
-            <div>
+            <div className={styles.body}>
                 <video autoPlay controls>
                     <source src={demoVid} type="video/mp4"/>
                 </video>
@@ -37,14 +80,17 @@ export class MediaCard extends Component<{}, {}> {
                 </div>
 
                 <div className={styles.emojis}>
-                    <img src={fireEmoji} alt="fire emoji" className={styles.emoji}/>
+                    <img src={fireEmoji} alt="fire emoji" className={styles.emoji} onClick={() => handleClick("fire")}/>
                     <br/>
-                    <img src={joyEmoji} alt="fire emoji" className={styles.emoji}/>
+                    <img src={joyEmoji} alt="joy emoji" className={styles.emoji} onClick={() => handleClick("joy")}/>
                     <br/>
-                    <img src={shitEmoji} alt="fire emoji" className={styles.emoji}/>
+                    <img src={shitEmoji} alt="shit emoji" className={styles.emoji} onClick={() => handleClick("shit")}/>
                 </div>
 
                 <CommentSection />
+                <canvas id="canvas" className={styles.canvas}>
+
+                </canvas>
             </div>
         );
     }
