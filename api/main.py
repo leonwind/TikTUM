@@ -1,3 +1,4 @@
+import json
 import os.path
 from datetime import datetime
 
@@ -7,7 +8,6 @@ from flask_cors import CORS
 from api.comments import comments_object_from_txt
 from api.qa_bot import ask_question
 from api.segmentation import extract_title_from_frame
-from api.transcription import get_transcription
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -15,6 +15,15 @@ COMMENTS_DIR = 'comments'
 VIDEOS_DIR = 'videos'
 FRAMES_DIR = 'frames'
 FPS = 25.0
+TRANSCRIPTION_DIR = "transcriptions"
+
+
+def get_transcription(video_id) -> dict:
+    transcription_path = os.path.join(TRANSCRIPTION_DIR, video_id + ".json")
+    if not os.path.exists(transcription_path):
+        return {}
+    with open(transcription_path, "r") as f:
+        return json.load(f)
 
 
 # Endpoint to post comment on video with video_id
@@ -29,7 +38,7 @@ def post_comment(video_id):
     answer = None
     if comment.endswith('?'):
         # Get extra information for video_id
-        # extra_information = get_transcription(f'{VIDEOS_DIR}/{video_id}.mp4', 0).get("text")
+        # extra_information = get_transcription(f'{VIDEOS_DIR}/{video_id}.mp4').get("text")
         # Ask question to GPT-3
         answer = ask_question(comment)
     # Save comment to a txt file
@@ -55,7 +64,7 @@ def get_comments(video_id):
 @app.route('/video/<video_id>/search/<query>', methods=['GET'])
 def query_lecture(video_id, query):
     # Get transcript
-    transcript_response = get_transcription(f'{VIDEOS_DIR}/{video_id}.mp4', 0)
+    transcript_response = get_transcription(f'{VIDEOS_DIR}/{video_id}.mp4')
     segments = transcript_response.get("segments")
     # Search for query
     timestamp = -1
