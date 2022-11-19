@@ -90,9 +90,12 @@ def lecture_outline(video_id):
     frame_paths = [frame_path for frame_path in os.listdir(frames_path) if frame_path.endswith('.jpg')]
     outline = []
     for frame_path in frame_paths:
-        outline.append({
-            "timestamp": float(frame_path[6:-4]) / FPS,
-            "title": extract_title_from_frame(os.path.join(frames_path, frame_path)),
-        })
+        title = extract_title_from_frame(os.path.join(frames_path, frame_path))
+        titles = [item.get("title") for item in outline]
+        if title not in titles:
+            outline.append({
+                "timestamp": float(frame_path[6:-4]) / FPS,
+                "title": title,
+            })
 
     return sorted(outline, key=lambda outline_element: outline_element["timestamp"])
