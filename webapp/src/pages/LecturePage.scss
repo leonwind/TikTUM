@@ -38,6 +38,10 @@
                     border-radius: 3px;
 
                     margin-right: 0.5em;
+
+                    &.active {
+                        background-color: rgb(28, 226, 147);
+                    }
                 }
 
                 .title {

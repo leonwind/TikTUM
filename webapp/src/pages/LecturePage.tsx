@@ -65,8 +65,12 @@ const LecturePage = () => {
                 <div className="LecturePage__outline">
                     <h3>Outline</h3>
                     {outline.map((item, index) => (
-                        <div className="LecturePage__outline__item" key={index} onClick={makeSeekFunction(item['timestamp'])}>
-                            <div className="time">{secondsToHMinSec(item['timestamp'])}</div>
+                        <div 
+                            className="LecturePage__outline__item" 
+                            key={index} 
+                            onClick={makeSeekFunction(item['timestamp'])
+                        }>
+                            <div className={`time ${item['timestamp'] <= videoTime ? 'active' : ''}`}>{secondsToHMinSec(item['timestamp'])}</div>
                             <div className="title">{item['title']}</div>
                         </div>
                     ))}
