@@ -7,11 +7,15 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { MediaCard } from './content';
 import SelectInput from '@mui/material/Select/SelectInput';
+import matvecVid from '../static/matvec.mp4';
+import matmatVid from '../static/matmat.mp4';
+import hadamardVid from '../static/hadamard.mp4';
+import planetEarth from '../static/dl-matrix-vector-attenborough.mp4';
 
 
 export default function Feed() {
 
-  const conts = [1, 2, 3, 4, 5, 6, 7];
+  const conts = [matmatVid, matvecVid, hadamardVid, planetEarth];
   // const contRefs = React.useMemo(
   //   () => conts.map(() => React.createRef()), 
   //   [conts]
@@ -25,10 +29,10 @@ export default function Feed() {
       alignItems="center"
       spacing={1}
     >
-      {conts.map(el =>
+      {conts.map((video, idx) =>
         <Box
           // ref={contRefs[i]}
-          key={el}
+          key={idx}
           sx={{
             border: '3px solid black'
           }}
@@ -41,7 +45,7 @@ export default function Feed() {
           width="100vw"
           maxWidth="600px"
         >
-          <MediaCard />
+          <MediaCard video={video}/>
         </Box>
       )}
     </Stack>

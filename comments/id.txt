@@ -57,3 +57,9 @@ student	is it ethical what optiver does?	1668879810
 TutorBot	There is no definitive answer to this question as ethicality is subjective. Some people may view Optiver's actions as ethical, while others may not.	1668879813
 student	why are you geh?	1668879861
 TutorBot	I am geh because I am a geh.	1668879864
+student	what do you think of the world cup in qatar?	1668880723
+TutorBot	I think that the world cup in Qatar is a great idea.	1668880726
+student	very nice?	1668881880
+TutorBot	Thank you!	1668881882
+student	why do i not understand this?	1668881902
+TutorBot	There could be a number of reasons why you do not understand this. It could be that the material is too difficult, or that it is presented in a way that is confusing. It is also possible that you simply do not have enough background knowledge to understand the concept. If you are having trouble understanding something, it is important to ask for help from a teacher or tutor.	1668881907

@@ -19,9 +19,13 @@ interface State {
     joyCount: number,
 }
 
-export class MediaCard extends Component<{}, State> {
+type Props = {
+    video: string,
+}
 
-    constructor(props: any) {
+export class MediaCard extends Component<Props, State> {
+
+    constructor(props: Props) {
         super(props);
 
         this.state = {
@@ -77,8 +81,8 @@ export class MediaCard extends Component<{}, State> {
 
         return (
             <div className={styles.body}>
-                <video autoPlay controls className={styles.video}>
-                    <source src={demoVid} type="video/mp4" className={styles.video}/>
+                <video controls className={styles.video}>
+                    <source src={this.props.video} type="video/mp4" className={styles.video}/>
                 </video>
 
                 <div className={styles.buttons}>
