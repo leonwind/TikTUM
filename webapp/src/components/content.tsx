@@ -61,7 +61,7 @@ export class MediaCard extends Component<{}, {}> {
 
         return (
             <div className={styles.body}>
-                <video autoPlay controls>
+                <video autoPlay controls className={styles.video}>
                     <source src={demoVid} type="video/mp4" className={styles.video}/>
                 </video>
 
