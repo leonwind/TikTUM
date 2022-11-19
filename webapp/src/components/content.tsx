@@ -46,7 +46,7 @@ export const MediaCard = ({video, onToggleComments}: Props) => {
                 }
                 case "joy": {
                     setJoyCount(joyCount + 15);
-                    setTimeout((joyCount) => setJoyCount(0), 5000);
+                    setTimeout(() => setJoyCount(0), 5000);
                     break;
                 }
             }

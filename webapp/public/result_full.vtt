@@ -1,0 +1,1616 @@
+WEBVTT
+
+0:00:00.000 --> 0:00:05.000
+ Hello everybody and welcome back to the second tutorial session of I2DM.
+
+0:00:05.000 --> 0:00:09.000
+ My name is Francesca and hopefully the last week's tutorial session
+
+0:00:09.000 --> 0:00:12.000
+ gave you a good overview of an electress structure
+
+0:00:12.000 --> 0:00:15.000
+ and got your familiar with our communication platform, Piazza,
+
+0:00:15.000 --> 0:00:18.000
+ and our submission system on our website.
+
+0:00:18.000 --> 0:00:22.000
+ Since our first submission exercise will start next week,
+
+0:00:22.000 --> 0:00:24.000
+ in case you have any problems left,
+
+0:00:24.000 --> 0:00:27.000
+ please reach out on Piazza to our teaching assistants to get some help
+
+0:00:27.000 --> 0:00:31.000
+ so that you're good to go next week for the first exercise submission.
+
+0:00:31.000 --> 0:00:34.000
+ Our program today will be a math recap
+
+0:00:34.000 --> 0:00:37.000
+ and I will give you an overview of the most important mathematical concepts
+
+0:00:37.000 --> 0:00:39.000
+ that will be needed in our lecture.
+
+0:00:39.000 --> 0:00:42.000
+ For those students of you with a strong mathematical background,
+
+0:00:42.000 --> 0:00:44.000
+ this tutorial session won't be too exciting,
+
+0:00:44.000 --> 0:00:47.000
+ but for us it's important to get all of you to the same level
+
+0:00:47.000 --> 0:00:51.000
+ and also to give you an overview of the mathematical concepts that will be needed.
+
+0:00:51.000 --> 0:00:56.000
+ We also uploaded an exercise sheet with five exercises on our website.
+
+0:00:56.000 --> 0:01:00.000
+ These exercises will give you the opportunity to practice your understanding
+
+0:01:00.000 --> 0:01:04.000
+ but we highly recommend you to work on the exercises this week
+
+0:01:04.000 --> 0:01:07.000
+ as we choose them closely to the content on the lecture.
+
+0:01:07.000 --> 0:01:11.000
+ So all of the exercises at some point in the future will come back to you.
+
+0:01:11.000 --> 0:01:15.000
+ So a good understanding of them will definitely help you in our lecture.
+
+0:01:15.000 --> 0:01:20.000
+ We didn't include so far any solutions but we will do so next week.
+
+0:01:20.000 --> 0:01:24.000
+ This also gives you the opportunity to work on the exercises on your own this week
+
+0:01:24.000 --> 0:01:28.000
+ and compare your own work to the solution next week.
+
+0:01:28.000 --> 0:01:32.000
+ Okay, so this was everything from the organization aside
+
+0:01:32.000 --> 0:01:35.000
+ so let us start with the math recap.
+
+0:01:35.000 --> 0:01:38.000
+ Okay, before we now dive into the mathematics,
+
+0:01:38.000 --> 0:01:41.000
+ I first of all want to give you a short overview
+
+0:01:41.000 --> 0:01:44.000
+ of how this tutorial session is structured.
+
+0:01:44.000 --> 0:01:46.000
+ So we subdivided it into three parts.
+
+0:01:46.000 --> 0:01:49.000
+ The first one being linear algebra, the second calculus,
+
+0:01:49.000 --> 0:01:51.000
+ and the third one probability theory.
+
+0:01:51.000 --> 0:01:55.000
+ So I summarized the contents that we will have a look at
+
+0:01:55.000 --> 0:01:57.000
+ and let me just go through it with you together.
+
+0:01:57.000 --> 0:02:01.000
+ So linear algebra, we will have a look at vector and matrices
+
+0:02:01.000 --> 0:02:04.000
+ and at the most important basic operations on them.
+
+0:02:04.000 --> 0:02:05.000
+ So that won't be too difficult.
+
+0:02:05.000 --> 0:02:10.000
+ Also, we will introduce tensils which are essentially just a generalization of matrices
+
+0:02:10.000 --> 0:02:14.000
+ and which are very useful in the setting of deep learning and computer vision.
+
+0:02:14.000 --> 0:02:17.000
+ Finally, I will talk about norms and loss functions
+
+0:02:17.000 --> 0:02:20.000
+ which will be used heavily in our lecture.
+
+0:02:20.000 --> 0:02:22.000
+ So that's also good to see them again.
+
+0:02:22.000 --> 0:02:24.000
+ The second part is calculus.
+
+0:02:24.000 --> 0:02:27.000
+ So there we will mainly talk about derivatives.
+
+0:02:27.000 --> 0:02:29.000
+ We start with a scale at the derivative
+
+0:02:29.000 --> 0:02:32.000
+ and then we will go up to the higher dimensions.
+
+0:02:32.000 --> 0:02:36.000
+ So we will look at gradients and at the Jacobian matrix.
+
+0:02:36.000 --> 0:02:40.000
+ Finally, in calculus, we also want to have a deeper look at the chain world
+
+0:02:40.000 --> 0:02:44.000
+ which will play a very important role in the setting of deep learning and new networks.
+
+0:02:44.000 --> 0:02:47.000
+ So that's important as well.
+
+0:02:47.000 --> 0:02:50.000
+ The third part is probability theory.
+
+0:02:50.000 --> 0:02:52.000
+ So there we will start with the main concepts
+
+0:02:52.000 --> 0:02:54.000
+ and we will have a look at their definition.
+
+0:02:54.000 --> 0:02:56.000
+ So probability spaces, random variables,
+
+0:02:56.000 --> 0:02:59.000
+ and also the corresponding distribution functions.
+
+0:02:59.000 --> 0:03:04.000
+ Furthermore, we also review the concept of mean invariances
+
+0:03:04.000 --> 0:03:08.000
+ and we will give you a short overview of the most important probability distributions
+
+0:03:08.000 --> 0:03:10.000
+ of the random variable.
+
+0:03:10.000 --> 0:03:14.000
+ For example, the Gaussian distribution or the uniform distribution.
+
+0:03:14.000 --> 0:03:20.000
+ So let us have a look at the first part, linear algebra.
+
+0:03:20.000 --> 0:03:23.000
+ So before we give the definition,
+
+0:03:23.000 --> 0:03:28.000
+ I want to have a look at the basic notations here before we go further.
+
+0:03:28.000 --> 0:03:30.000
+ So when we talk about a vector,
+
+0:03:30.000 --> 0:03:33.000
+ we talk about an element of Rn mostly.
+
+0:03:33.000 --> 0:03:36.000
+ So it's a vector. It's just a two-wheel-width n elements.
+
+0:03:36.000 --> 0:03:38.000
+ In our case, we're looking at Rn.
+
+0:03:38.000 --> 0:03:41.000
+ Of course, the vector is not always an element of Rn.
+
+0:03:41.000 --> 0:03:46.000
+ But in our case, we are just restricting ourselves to Rn here.
+
+0:03:46.000 --> 0:03:49.000
+ So when we choose a vector v in Rn,
+
+0:03:49.000 --> 0:03:53.000
+ we can refer to the i-th element by using the index.
+
+0:03:53.000 --> 0:04:00.000
+ So the e-th element of our vector v in Rn is then given by v in the index i,
+
+0:04:00.000 --> 0:04:03.000
+ which is then an element in R, of course.
+
+0:04:03.000 --> 0:04:05.000
+ Equivalent D.
+
+0:04:05.000 --> 0:04:10.000
+ Matrix is an element now of the set R to the power of n times n.
+
+0:04:10.000 --> 0:04:14.000
+ So it's a matrix with n rows and m columns.
+
+0:04:14.000 --> 0:04:20.000
+ And here, if we take arbitrary matrix A and our set R to the power of n times m,
+
+0:04:20.000 --> 0:04:23.000
+ we denote an element in this matrix.
+
+0:04:23.000 --> 0:04:30.000
+ For example, in the i-th row and the j-th column by the element a, a, a, i, j,
+
+0:04:30.000 --> 0:04:33.000
+ where i and j is in the index.
+
+0:04:33.000 --> 0:04:38.000
+ And this element, as well as before in the vector, is an element in R.
+
+0:04:38.000 --> 0:04:41.000
+ OK, so this is the notation that we will use.
+
+0:04:41.000 --> 0:04:47.000
+ Another notation that I want to shortly review is the transpose of a matrix.
+
+0:04:47.000 --> 0:04:53.000
+ And the transpose of a matrix essentially is just flipping columns and rows.
+
+0:04:53.000 --> 0:04:56.000
+ So you just flip them one around.
+
+0:04:56.000 --> 0:05:01.000
+ And then we denote a transpose matrix, which has been the matrix A.
+
+0:05:01.000 --> 0:05:06.000
+ We denote it by A to the power of t, which is referring to transpose.
+
+0:05:06.000 --> 0:05:11.000
+ And when the matrix A is an element of R to the power n times m,
+
+0:05:11.000 --> 0:05:15.000
+ then the transpose matrix, as we flip rows and columns,
+
+0:05:15.000 --> 0:05:19.000
+ is then an element of the set R to the power m times n.
+
+0:05:19.000 --> 0:05:22.000
+ So we flip also the dimensions.
+
+0:05:22.000 --> 0:05:27.000
+ And this concept of transpose is used similarly for vectors.
+
+0:05:27.000 --> 0:05:30.000
+ So you can also flip rows and columns in a vector.
+
+0:05:30.000 --> 0:05:35.000
+ So a vector like this will just be kind of a lying vector.
+
+0:05:35.000 --> 0:05:40.000
+ And you don't maybe have a vector in n or R to the power n times n.
+
+0:05:40.000 --> 0:05:46.000
+ But rather in the element when the set R to the power one time times n.
+
+0:05:46.000 --> 0:05:51.000
+ So yeah, you can also transpose vectors is what I want to say here.
+
+0:05:51.000 --> 0:05:54.000
+ OK, so vectors, let's have a look at that.
+
+0:05:54.000 --> 0:05:58.000
+ As I said, a vector is an element in an n dimensional space.
+
+0:05:58.000 --> 0:06:01.000
+ And now, OK, we look at the space Rn.
+
+0:06:01.000 --> 0:06:04.000
+ And you can just denote it by a tupper with n elements.
+
+0:06:04.000 --> 0:06:09.000
+ And the elements are now given by v1, v2, up to vn.
+
+0:06:09.000 --> 0:06:14.000
+ And the figure here is showing a three-dimensional space.
+
+0:06:14.000 --> 0:06:20.000
+ And now, OK, for example, R3, where each of the little pictures that you see
+
+0:06:20.000 --> 0:06:24.000
+ is one vector in our three-dimensional space R3.
+
+0:06:24.000 --> 0:06:30.000
+ And for vectors, we can define four basic operations.
+
+0:06:30.000 --> 0:06:36.000
+ And these are given by addition, subtraction, scalar multiplication, and the dot product.
+
+0:06:36.000 --> 0:06:40.000
+ And we will have a short view over these operations.
+
+0:06:40.000 --> 0:06:43.000
+ So addition of two vectors.
+
+0:06:43.000 --> 0:06:46.000
+ So we start by taking two vectors arbitrary.
+
+0:06:46.000 --> 0:06:49.000
+ So a and b are two elements of Rn.
+
+0:06:49.000 --> 0:06:54.000
+ And then you find the addition of these two vectors by the tupper,
+
+0:06:54.000 --> 0:06:58.000
+ where you component by add the elements of the vector a and b.
+
+0:06:58.000 --> 0:07:01.000
+ So the first element is given by a1 plus b1.
+
+0:07:01.000 --> 0:07:04.000
+ The last element is given by a and plus bn.
+
+0:07:04.000 --> 0:07:12.000
+ And of course, the result of the addition of two vectors in Rn is again an element in Rn.
+
+0:07:12.000 --> 0:07:18.000
+ And the figure and the lower right of this slide shows you the geometric interpretation
+
+0:07:18.000 --> 0:07:21.000
+ of what does it mean to add two vectors in the space Rn.
+
+0:07:21.000 --> 0:07:25.000
+ So here, for example, we have the vectors a and b.
+
+0:07:25.000 --> 0:07:31.000
+ And addition of these vectors geometrically means that we just concatenate.
+
+0:07:31.000 --> 0:07:33.000
+ So first of all, we take the vector of a.
+
+0:07:33.000 --> 0:07:41.000
+ And then after that, we concatenate the vector of b, which then results in the red vector here given by a plus b.
+
+0:07:41.000 --> 0:07:45.000
+ And you can also do it the other way around, start by taking the vector b.
+
+0:07:45.000 --> 0:07:49.000
+ And then concatenate the vector a, which gives you exactly the same.
+
+0:07:49.000 --> 0:07:59.000
+ And because these are exactly the same, we can define or we can just see that the addition is a co-communative operation.
+
+0:07:59.000 --> 0:08:03.000
+ Okay, so let us have a look at subtraction.
+
+0:08:03.000 --> 0:08:10.000
+ The subtraction operation is exactly the same as the addition, but we're just going to replace the plus sign by a minus sign.
+
+0:08:10.000 --> 0:08:12.000
+ So it's nothing special.
+
+0:08:12.000 --> 0:08:22.000
+ So again, we start by a and b being two vectors in Rn, and then the subtraction of these two vectors a minus b is defined by the vector when you subtract component vice.
+
+0:08:22.000 --> 0:08:28.000
+ So the first element then or the first element in the vector a minus b is given by a one minus b one.
+
+0:08:28.000 --> 0:08:32.000
+ And the last element is given by a and minus bn.
+
+0:08:32.000 --> 0:08:37.000
+ So the resulting vector is an element in Rn again.
+
+0:08:37.000 --> 0:08:42.000
+ If you look at the figure on the lower right, you can see again the geometric interpretation.
+
+0:08:42.000 --> 0:08:46.000
+ And here you have like a blue the vectors a and b.
+
+0:08:46.000 --> 0:08:57.000
+ And then red you then have denoted or represented the vector a minus b, which is connecting the ends of the vector a and b.
+
+0:08:57.000 --> 0:08:59.000
+ Okay.
+
+0:08:59.000 --> 0:09:00.000
+ Scala multiplication.
+
+0:09:00.000 --> 0:09:12.000
+ This is maybe more interesting than addition and subtraction, but I think it's also pretty simple. So here we don't start having two vectors in the beginning a and b, but we only take one vector a and Rn.
+
+0:09:12.000 --> 0:09:20.000
+ And then on top of that, we take a scalar c and R, which will then be used to multiply the vector by this scalar c.
+
+0:09:20.000 --> 0:09:31.000
+ So the scalar multiplication is defined by c times a and then it's given by the vector by each component or each element in the vector a is multiplied by this scalar c.
+
+0:09:31.000 --> 0:09:47.000
+ So the first element in our vector c times a is given by c times a one and the last element is given by c times a and and the result of scalar multiplication of a scalar with the vector in Rn is again an element in Rn.
+
+0:09:47.000 --> 0:10:00.000
+ And the figure here on the lower right of the slide again gives you a geometric interpretation of what the scalar multiplication is doing to a vector and essentially that just means that we can stretch our vector a.
+
+0:10:00.000 --> 0:10:03.000
+ So we can stretch it by the scalar c.
+
+0:10:03.000 --> 0:10:18.000
+ If you have a scalar which is positive and bigger than one, then we stretch it and make the vector longer. If you have a scalar which is between 0 and 1, you can just make the vector smaller or shorter.
+
+0:10:18.000 --> 0:10:24.000
+ And if you now choose a negative scalar, you can also reverse the direction of the vector.
+
+0:10:24.000 --> 0:10:28.000
+ So this is geometrically speaking what scalar multiplication is.
+
+0:10:28.000 --> 0:10:36.000
+ Okay, so finally let's have a look at the dot product which is maybe the most important operation of all of these.
+
+0:10:36.000 --> 0:10:48.000
+ Okay, so for the dot product again we start with two vectors. So taking a and b as elements from Rn and then the dot product is defined as you just use the multiplication side for a times b.
+
+0:10:48.000 --> 0:11:03.000
+ But essentially it is like the multiplication between the vector, the transposed vector of a and the vector b. And in this case that just means that I take component bias to product the elements of the two vectors.
+
+0:11:03.000 --> 0:11:11.000
+ And then I take the sum over all of the entries of this resulting component bias multiplication of vector a and b.
+
+0:11:11.000 --> 0:11:22.000
+ So the result of the dot product is given here in the second and third line. So you can just see it's the sum over a i times b i.
+
+0:11:22.000 --> 0:11:27.000
+ So the sum over component bias multiplication of the elements of the vector a and b.
+
+0:11:27.000 --> 0:11:37.000
+ Which is important to mention is now that the result of the dot product of two vectors in Rn is not any more element in Rn itself.
+
+0:11:37.000 --> 0:11:44.000
+ But now we obtain an element in R so scalar. So it's important to remember for the dot product.
+
+0:11:44.000 --> 0:11:51.000
+ The dot product now has some interesting properties. So the first one is that the dot product is a commutative operation.
+
+0:11:51.000 --> 0:12:01.000
+ That means that if I take two vectors a and b, then the dot product of a and b so a times b equals to b times a. So the dot product between b and a.
+
+0:12:01.000 --> 0:12:09.000
+ This is interesting. We also have that for addition and the scalar multiplication as well. So all of them are commutative.
+
+0:12:09.000 --> 0:12:16.000
+ Another one is the geometric interpretation, which is in this case it is a bit more complicated than the cases before.
+
+0:12:16.000 --> 0:12:19.000
+ So let's have a look at the figure that I included on this slide.
+
+0:12:19.000 --> 0:12:34.000
+ There you see two vectors x and y and we usually denote that the vectors by a and b so that's kind of the same. And you see that between these vectors x and y you can define the angle theta between these two vectors.
+
+0:12:34.000 --> 0:12:47.000
+ So the dot product is now in relation to this angle and it's given by the second line geometric interpretation that I gave a formula which is given by a times b.
+
+0:12:47.000 --> 0:12:58.000
+ So the dot product of a and b is equal to the length of a times the length of b times cosine of theta. So cosine of the angle between our two vectors a and b.
+
+0:12:58.000 --> 0:13:10.000
+ So this is a property and interpretation of the dot product which is really interesting because it refers to this more complex concept of the angle between two vectors.
+
+0:13:10.000 --> 0:13:24.000
+ You can never look at orthogonal vectors. What does it mean to be orthogonal for two vectors? Two vectors are orthogonal if the angle between them is exactly 90 degrees. So we have a right angle like this.
+
+0:13:24.000 --> 0:13:32.000
+ And one property in relation to our dot product is now that two non zero vectors are orthogonal to each other.
+
+0:13:32.000 --> 0:13:43.000
+ So if I know the dot product is zero, I can conclude that they are orthogonal to each other and the other way around.
+
+0:13:43.000 --> 0:13:49.000
+ So this is a nice interpretation geometrically of the dot product.
+
+0:13:49.000 --> 0:14:09.000
+ Next slide, I included a figure where you can nicely see as well this interpretation with the angle between two vectors. I just start the animation and you can see that if the angle between two vectors is bigger than 90 degrees, you obtain a negative dot product.
+
+0:14:09.000 --> 0:14:23.000
+ So the angle is exactly 90 degrees than our dot product is zero. And if the angle is smaller than 90 degrees, then we have a positive dot product. So this is something which you should know about the dot product which is quite interesting.
+
+0:14:23.000 --> 0:14:32.000
+ So let's continue with matrices. As I mentioned before, matrix is an element of the set or the space R to the power n times m.
+
+0:14:32.000 --> 0:14:42.000
+ So we have noted with the matrix notation, which is essentially matrix, including all the elements starting with the element a one one up to the element a and m.
+
+0:14:42.000 --> 0:14:53.000
+ And on the matrix, we can define also basic operations. In our case, we will have a look at matrix vector multiplication matrix matrix multiplication and the hardmer product.
+
+0:14:53.000 --> 0:15:09.000
+ And I think the first two are well known from all of you, the harder mud product is something which will not often define a mathematical lecture, but it's a basic operation, which is really heavily used in the I to the setting, and which is also not very difficult.
+
+0:15:09.000 --> 0:15:12.000
+ So we also have a look at this one.
+
+0:15:12.000 --> 0:15:16.000
+ Let's start with the matrix vector multiplication.
+
+0:15:16.000 --> 0:15:32.000
+ The name is already mentioning or saying we have here a multiplication between the matrix and the vector. So we start with a matrix a and we take it from a set R to the power n times m and a vector from the set R to the power m.
+
+0:15:32.000 --> 0:15:52.000
+ And now the multiplication between this matrix and this vector like a times b is given in this formula that I included in our slide here. So we have our matrix a we have our vector b and essentially what we are doing is we lay our we have our matrix and we lay our vector on top of the matrix.
+
+0:15:52.000 --> 0:16:02.000
+ And what we then do is we do kind of a dot product with each row of the matrix. So the first element of the result, the first component, the first row.
+
+0:16:02.000 --> 0:16:16.000
+ And it's the dot product of the first row of the matrix a together with the vector b. And then you continue doing that the last rows, then the dot product between the last row of the matrix a together with a vector b.
+
+0:16:16.000 --> 0:16:26.000
+ And of course, as you see here the outcome of the matrix vector multiplication between a and b is here an element of R and so has dimension n.
+
+0:16:26.000 --> 0:16:36.000
+ And this is important if you do matrix vector multiplication and also all the other multiplications on matrices, it's important that you always take care of the dimension.
+
+0:16:36.000 --> 0:16:53.000
+ And you have to be fitting to each other because otherwise it's not well defined. So in our case, like you see here on the second point, it's important to make sure that in our case a is of dimension n times m and our vector has to be of dimension m times one.
+
+0:16:53.000 --> 0:17:07.000
+ And just the dimension, the second dimension of our matrix has to be equal to the first dimension of our vector, otherwise it's not defined. And this is easily seen by the definition of the matrix vector of multiplication.
+
+0:17:07.000 --> 0:17:16.000
+ And as I said before, the outcome is now an element, a vector of dimension n times one, so a vector of dimension n.
+
+0:17:16.000 --> 0:17:26.000
+ And the lower part of the slide, you can see an example which uses a matrix of dimension three times one and a vector of dimension two.
+
+0:17:26.000 --> 0:17:42.000
+ And then you get the matrix multiplication delivers an element of dimension three. And here you can just test your understanding of this multiplication by just doing this exercise on your own and comparing your solution to the solution down here.
+
+0:17:42.000 --> 0:17:53.000
+ And then we just continue with the matrix matrix multiplication. And as the name the same, this is just a generalization of the multiplication that we saw before of the matrix of the vector multiplication.
+
+0:17:53.000 --> 0:18:02.000
+ In this case, we don't take a vector B, but we take a second matrix and then we multiply multiply the two matrices with these data.
+
+0:18:02.000 --> 0:18:12.000
+ And then we multiply the two matrices with the matrix A, which is from the set R to the power n times m and B, which is an element of the set R to the power m times L.
+
+0:18:12.000 --> 0:18:27.000
+ Again, have a look at the dimensions here because that's important. And the multiplication is now given by the multiplication between A and B, between these two matrices, where each element in the outcome, the outcome is again a matrix of
+
+0:18:27.000 --> 0:18:42.000
+ dimension n times L. And each element in the outcome of this multiplication is essentially just the dot product between one row in the matrix A and the column in the matrix B.
+
+0:18:42.000 --> 0:18:57.000
+ So if you have a look at the second line of equations here on the slide, C ij, which is just one element in the resulting matrix is now the dot product between the Ith row of the matrix A and the J's column of the matrix B.
+
+0:18:57.000 --> 0:19:10.000
+ So that's the definition. And then you just build up this whole resulting matrix with n elements or n times L elements. And that gives you then the matrix matrix multiplication result.
+
+0:19:10.000 --> 0:19:31.000
+ And again, I also want to point at the dimensions again, we started here with an element A from dimension n times m and B has dimension m times L. And that's important for this multiplication that the second dimension of the matrix A equals the first dimension of the matrix B.
+
+0:19:31.000 --> 0:19:46.000
+ Because otherwise you can just see it by the definition that multiplication wouldn't be identified. So always make sure that you check the dimensions and we also have an exercise which is pointing to this dimension problem of the multiplication.
+
+0:19:46.000 --> 0:20:01.000
+ And one last thing before I mentioned that the operations that we have been looking at for the vectors are commutative in this case matrix matrix multiplication is not a commutative operation.
+
+0:20:01.000 --> 0:20:11.000
+ So you're not allowed to just switch the order of the multiplication and say that A times B is the same than B times A because that's here not the case.
+
+0:20:11.000 --> 0:20:25.000
+ So that's important to say it's always pretty easy if you have something which is commutative in this case matrix matrix multiplication and also matrix vector multiplication is not commutative.
+
+0:20:25.000 --> 0:20:43.000
+ So last but not least, the other part of the product I've been talking about that in the introduction of the basic operation on matrices is a really easy operation because it's not using the product in the multiplication, but it's just the component wise multiplication of two matrices.
+
+0:20:43.000 --> 0:21:04.000
+ So we start with two matrices A and B in this case now we have the same dimension for both of the matrices. So both of them are an element of the set R to the power n times M and what we then do we define this heart am I product which is denoted by a multiplication sign and the circle around it.
+
+0:21:04.000 --> 0:21:24.000
+ So we say the result of the heart am I product is a matrix where we just have component wise multiplication. So if you look at the first entry at space 1 1 you can just see that the entry in resulting matrix is A 1 1 times B 1 1 and then you do that component wise for all the entries in the matrices.
+
+0:21:24.000 --> 0:21:42.000
+ So it's giving you a matrix of dimension n times M and this is the heart am I product so just component wise multiplication. And I think that's maybe the most simple operations on matrices, but as I said, it's highly important for our I2DL lecture.
+
+0:21:42.000 --> 0:21:57.000
+ So make sure that you know the difference between other multiplication on matrices and always make sure that the dimensions are fitting because that's kind of the most important thing when you work with matrices that you always take care of the dimensions and that they fit together.
+
+0:21:57.000 --> 0:22:15.000
+ As I promised before we also want to look at tensors. Then those are essentially a multi-dimensional array and they are a generalization of the concept of vectors and matrices. So on the figure that I included on this slide you can just see the relationship to scalars, vectors and matrices.
+
+0:22:15.000 --> 0:22:27.000
+ So let's have a look at scalars first. The scalar is just an element from a set. In our case we look at the set R so the set of really numbers so scalar is just one of the real numbers that we choose arbitrarily.
+
+0:22:27.000 --> 0:22:39.000
+ The vector now can be seen either as a real vector or column vector. And this is essentially just a generalization of the concept of a scalar because we just concatenate several scalars in one structure.
+
+0:22:39.000 --> 0:22:54.000
+ Here's the structure of vectors. The same is happening for matrix. A matrix is a generalization of the concept of vectors because it concatenates or includes combines several vectors in one structure.
+
+0:22:54.000 --> 0:23:05.000
+ So now here we not only have one array but we have like in a matrix rows and columns which are combining several vectors.
+
+0:23:05.000 --> 0:23:17.000
+ And this is then the same step that we are going from matrix to tensor. A tensor is a generalization of a matrix. So it's just combining concatenating several matrices in one structure.
+
+0:23:17.000 --> 0:23:27.000
+ So what we see here on the image you see that we are not only having rows and columns but we also start having channels. Channels are describing the depth of our structure here.
+
+0:23:27.000 --> 0:23:39.000
+ So in this case we have three rows, three columns and three channels describing the depth. So let's have a look where we can use these and where we're going to use it in it to the end.
+
+0:23:39.000 --> 0:23:49.000
+ So tensors are really common to use in computer vision and it's really easy to just say one application because each image that we want to process is essentially a tensor.
+
+0:23:49.000 --> 0:24:05.000
+ Images are often represented by RGB images. RGB stands for red, green and blue. So we are kind of including the information of the red colors, the green colors and the blue colors and three different challenges over the image over the pixels.
+
+0:24:05.000 --> 0:24:16.000
+ So one image can be described as a dimension of age times W times RGB which is standing for three in this case because we have three channels, RGB.
+
+0:24:16.000 --> 0:24:32.000
+ And on the image here or on the figure that is included on this slide you can just see it again. We have this funny picture of a cat which is then described as a tensor where we have like the size of the image is made and with.
+
+0:24:32.000 --> 0:24:41.000
+ And then we have the channels red, green and blue. And in these channels we can then include all the information on the red colors, green colors and blue colors.
+
+0:24:41.000 --> 0:24:52.000
+ So this is where tensors are an application and because images are represented there tensors they are really, really important for the whole setting of I2D.
+
+0:24:52.000 --> 0:24:58.000
+ Because when we process an image in a neural network of course we have to work with tensors as well.
+
+0:24:58.000 --> 0:25:05.000
+ So just have in mind that each image is represented as a tensor and the tensors just a generalization of the matrix.
+
+0:25:05.000 --> 0:25:11.000
+ Okay, so last but not least I want to talk about norms and laws functions.
+
+0:25:11.000 --> 0:25:19.000
+ So a norm mathematically seen you can describe it as the measure of the length of a vector.
+
+0:25:19.000 --> 0:25:34.000
+ And I included the definition here so norm is a non negative function which is always denoted by these vertical lines which is time going from a vector space which we do in T by V into the space R of the real numbers.
+
+0:25:34.000 --> 0:25:40.000
+ And it's non negative as I said. So we always have a positive outcome or a zero outcome.
+
+0:25:40.000 --> 0:25:47.000
+ And this function has to has three properties. If it satisfies these properties then we can call it an R.
+
+0:25:47.000 --> 0:25:54.000
+ And these properties probably you all of you have already seen them is first of all a very important one is the triangle inequality.
+
+0:25:54.000 --> 0:26:04.000
+ So when we take two vectors V and W and we take the addition of these two so V plus W and we take the norm of this.
+
+0:26:04.000 --> 0:26:10.000
+ This result has to be smaller or equal to the norm of V plus the norm of W.
+
+0:26:10.000 --> 0:26:13.000
+ So this is called the triangle inequality.
+
+0:26:13.000 --> 0:26:19.000
+ The second property has now something to do with the scalar multiplication that we have been looking at for the vectors.
+
+0:26:19.000 --> 0:26:28.000
+ In this case a is a scalar so an element of R in our case and V is a vector so an element of R to the power of N for example.
+
+0:26:28.000 --> 0:26:40.000
+ When we now take the scalar multiplication a times V and then the norm of this element it should be the same then a times the norm of V for every scalar a and R.
+
+0:26:40.000 --> 0:26:50.000
+ And the third property is now that the norm of a vector equals to zero if and only if this vector is equal to zero so it is the zero vector.
+
+0:26:50.000 --> 0:26:58.000
+ So this is also property for a norm so we are not allowed to assign the value of zero to a vector which is non zero.
+
+0:26:58.000 --> 0:27:16.000
+ Yeah and I just included some of the definition information we here is a vector space over field F in our case we just define V as R to the power of N and then it's a vector field about the real order over the field of the real numbers.
+
+0:27:16.000 --> 0:27:27.000
+ And as a remark which is important to say on one space like in our case R to the power of N you can define several measurements several norms.
+
+0:27:27.000 --> 0:27:32.000
+ So in our case what we want to have a look at on the next two slides is the L1 norm and the L2 norm.
+
+0:27:32.000 --> 0:27:42.000
+ These are two norms both defined on Rn but assigning different numbers to each vector but both of them are norm just a different norm.
+
+0:27:42.000 --> 0:27:55.000
+ And as I said in the definition of a norm like every function every non negative function that we can define with these three properties define norms of course there are several possibilities.
+
+0:27:55.000 --> 0:27:58.000
+ So let us have a look at the first one of the L1 norm.
+
+0:27:58.000 --> 0:28:03.000
+ Okay the L1 norm is the first example that we want to have a look at.
+
+0:28:03.000 --> 0:28:21.000
+ This one is a norm that one norm is a norm on the space Rn and it's defined by a function which we denote here by this sign which is used for a norm like these vertical lines and then we use the subscript 1 like an index 1 and this function is then going from Rn to R.
+
+0:28:21.000 --> 0:28:42.000
+ And it's a non negative function and it is defined as follows for each vector V which is denoted here is the two part of elements we want to Vn and we assign the number which is given here and we just take the absolute value of all the components of the vector and then we sum over these values.
+
+0:28:42.000 --> 0:28:53.000
+ And this gives us the L1 norm of a vector V. So this is the definition of the L1 norm and let's have a look at one simple example just to make sure that we understand the concept.
+
+0:28:53.000 --> 0:29:06.000
+ So we take now an arbitrary or not arbitrary in this case we take a vector V which is defined as an element from R3 and it has the components 1 minus 3 and 2.
+
+0:29:06.000 --> 0:29:18.000
+ And remember we want to calculate the L1 norm which just need to use the definition that we gave above. So it's just the summation over 3 elements in this case 1, 3 and 2.
+
+0:29:18.000 --> 0:29:32.000
+ So we just take the absolute values of all the components so in this case minus 3 gets 3 because we take the absolute value and 1 and 2 stay the same and then we just sum over them which gives us the result of 6.
+
+0:29:32.000 --> 0:29:43.000
+ So the L1 norm of this vector is equal to 6. So let us have a look at another norm, the second possibility that we can also define on this space of Rn.
+
+0:29:43.000 --> 0:29:52.000
+ So in this case we denoted with the subscript of 2 index of 2 and it's again a function from Rn to R like we gave in the definition.
+
+0:29:52.000 --> 0:30:14.000
+ And now the definition of this norm of this L2 norm is that it's behaving for a vector V again denoted by this tuple of elements of V1 to Vn and by taking every component to the power of 2 then take the summation over all of them and finally take the square root of this number.
+
+0:30:14.000 --> 0:30:23.000
+ So this is giving us the L2 norm of this vector V and again we're going to have a look at the example. We take the same example then this like before.
+
+0:30:23.000 --> 0:30:39.000
+ So again we have this vector which is defined by a vector 1 minus 3 and 2 as an element of R3 and then we calculate the L2 norm which is now given by the summation of 3 elements where we take all the components to the power of 2.
+
+0:30:39.000 --> 0:30:46.000
+ So 1 to the power of 2 minus 3 to the power of 2 and 2 to the power of 2 and finally we take the square root.
+
+0:30:46.000 --> 0:30:54.000
+ So this delivers us finally the number square root 14 which is quite different to the number that we found before to the L1.
+
+0:30:54.000 --> 0:31:00.000
+ So you see that both norms are behaving differently for the vectors of our space Rn.
+
+0:31:00.000 --> 0:31:09.000
+ Last but not least I want to talk about loss functions because they will play a very important role in the I to the lecture.
+
+0:31:09.000 --> 0:31:18.000
+ So a loss function essentially is a function that takes us input 2 vectors and the output is then a measurement of the distance between these 2 vectors.
+
+0:31:18.000 --> 0:31:27.000
+ So we can have a look here at the example for the L1 loss and the L2 loss because these are 2 losses that are referring to the L1 norm and respectively L2 norm.
+
+0:31:27.000 --> 0:31:44.000
+ So the L1 loss is a loss between 2 vectors so we denote the vectors V and W as elements of Rn and then we can define the L1 loss of these 2 vectors V and W as the L1 norm of the vector V minus W.
+
+0:31:44.000 --> 0:32:05.000
+ And as you remember we saw before V minus W is just describing a vector which is connecting to the 2 vectors V and W. So it's kind of describing the difference and then we take the L1 norm which is giving us the measurement of the distance between these 2 vectors but referring here to the L1 norm.
+
+0:32:05.000 --> 0:32:23.000
+ The same idea we can also use it for the L2 norm for the Euclidean norm. So here again we have these 2 vectors V and W and then we define the L2 loss as L2 of V and W where we now take the L2 norm of the vector V minus W.
+
+0:32:23.000 --> 0:32:35.000
+ So again the same concept but now we take another measurement near our L2 norm instead of our L1 norm. And these are 2 very famous loss functions that you will always see coming around because they are quite popular.
+
+0:32:35.000 --> 0:32:45.000
+ You will also see other loss functions but I hope that you better understand the relationship between the norm and the last function which is really easy for this L1 and L2 loss.
+
+0:32:45.000 --> 0:32:58.000
+ Before we now start with the second part of our tutorial session I first of all want to give a short outlook of where we need calculus and also where we need our linear algebra that we saw so far on the previous slides.
+
+0:32:58.000 --> 0:33:05.000
+ So you know that we want to talk about neural networks. I2DL is about deep learning and neural network structures.
+
+0:33:05.000 --> 0:33:27.000
+ And one of the famous tasks that we are looking at in deep learning has been image classification. So image classification the idea of the task is that we have an image and we want to construct a neural network program which is able to predict or to say which object is present in this frame.
+
+0:33:27.000 --> 0:33:35.000
+ So in this example we see a cat. For example here we have different classes. Let's say we have 3, we have a dog, we have cat and we have deer.
+
+0:33:35.000 --> 0:33:44.000
+ And we want this neural network that we see here in our circle to predict whether we see a deer, a dog or a cat in this image. Of course the answer is cat, we know that.
+
+0:33:44.000 --> 0:34:05.000
+ So first of all because before we can just try to start to process our image we have to transform it in a way that that is ready to process. And this is why I introduced the definition of a tensor because I said already images can be transformed or are essentially tensors.
+
+0:34:05.000 --> 0:34:17.000
+ So like the information of an image is stored in such a tensor. So an image is our tensor and this is the one or this is the structure that we are feeding into our new network.
+
+0:34:17.000 --> 0:34:31.000
+ And this is shown like this. So our new network is taking a tensor which is representing our image and the outcome of our new network is now a vector or a prediction what we are looking at.
+
+0:34:31.000 --> 0:34:41.000
+ Like a prediction of our new network which says to us we see this object. So as I said we are looking at 3 classes here.
+
+0:34:41.000 --> 0:34:50.000
+ Cat, dog and deer. And you see here it gives us kind of a score like how lightly it is that a cat dog or deer is visible on our image.
+
+0:34:50.000 --> 0:35:02.000
+ And the prediction that this new network here is now giving to us is really bad because it shows us a 70% probability that on this image we see a deer which is not true.
+
+0:35:02.000 --> 0:35:18.000
+ So in this case what we now have to do is we have to train our new network. We have to show him a lot of images and for each images it gives us a prediction and we have to say him you're good or you're not good and if you're not good we have to change something in our new network.
+
+0:35:18.000 --> 0:35:28.000
+ So this is what we do using loss functions. Loss functions are like we said describing the measurements between two vectors here.
+
+0:35:28.000 --> 0:35:37.000
+ The one vector is the vector is the outcome of our new network so the prediction and the other one is the truth that we know we just call it ground truth labels.
+
+0:35:37.000 --> 0:35:51.000
+ So for this image we know that it should be 100% cat and 0% dog and 0% deer that would be perfect. So then we just calculate the loss between the actual prediction that our new network did and the ground truth.
+
+0:35:51.000 --> 0:36:03.000
+ And then we can have a look like how wrong has our new network been and the total goal of learning of the learning process is that we want to minimize the loss.
+
+0:36:03.000 --> 0:36:15.000
+ We want to work or we want to train our new network so that it's working pretty good and gives us pretty good predictions.
+
+0:36:15.000 --> 0:36:26.000
+ And the new network essentially what it is doing it's like it's a big structure but it's containing of different matrices and these matrices and tensors are processing our image.
+
+0:36:26.000 --> 0:36:44.000
+ They are processing they are just doing matrix matrix multiplication and then we have some nonlinear functions and essentially this is just really easy mathematics that is that is happening here and the outcome is then our prediction of our classes.
+
+0:36:44.000 --> 0:36:56.000
+ We call the elements of these matrices I call them here W of course we have several of them but like easily speaking we look at the matrix and the weights like the elements of this matrix are the weights of our new network.
+
+0:36:56.000 --> 0:37:07.000
+ And what we now want to do in the training process we want to adjust the weights we want to make them better so that the prediction gets better and better by every training sample that the network is seeing.
+
+0:37:07.000 --> 0:37:17.000
+ And now is the big question how can we get an accurate matrix W to minimize the loss and minimize is essentially the bird that we need to understand why we need calculus.
+
+0:37:17.000 --> 0:37:34.000
+ The loss function has to be minimized that has something to do with the derivative of our last function of course because when we have the derivative we can define like the step the gradient we can define like in which direction do we have to change in order to minimize our loss.
+
+0:37:34.000 --> 0:37:50.000
+ And this is exactly what I talked about this method which is using derivatives and the chain rule essentially because we have like large new network structures is a method to approximate the best value for the weights of our new network.
+
+0:37:50.000 --> 0:38:01.000
+ And this method is called gradient descent and essentially mathematically seen it's pretty easy because it's just a derivative and the chain rule so nothing is happening more.
+
+0:38:01.000 --> 0:38:08.000
+ OK, so after this motivation let's start with the second part of our tutorial session which is calculus.
+
+0:38:08.000 --> 0:38:18.000
+ I said that we want to mainly talk about derivatives so scale at the relative gradients to covenants and we also want to have a deeper look at the chain rule.
+
+0:38:18.000 --> 0:38:33.000
+ So derivatives in general a derivative is essentially a function which measures the sensibility of changing the function value so the output value and with respect to the input value.
+
+0:38:33.000 --> 0:38:42.000
+ And it is well known for all of us and this scale at the derivative which is just a derivative of a real valued function f which is going from r to r.
+
+0:38:42.000 --> 0:38:55.000
+ So this is the easy setting. If we go in a higher dimension we need to extend the calculus and also to a higher dimension setting and we call this the matrix calculus.
+
+0:38:55.000 --> 0:39:05.000
+ And here we're going to look at function which are similar to the ones that we say or that are denoted here in the second point which are for example functions from r and to r.
+
+0:39:05.000 --> 0:39:19.000
+ And functions from r to rn also functions from rn to rm which are even more complex and the maximum here is a function which is starting with a matrix and has as an output a value air.
+
+0:39:19.000 --> 0:39:30.000
+ So function which is going from r power n times m to r. So these are more complex functions and we also want to have a look at how the derivative of these functions look like.
+
+0:39:30.000 --> 0:39:40.000
+ So this is matrix calculus. And all the concepts that we saw so far in linear algebra and also that we're going to see here in the calculus part are not too difficult.
+
+0:39:40.000 --> 0:39:51.000
+ But what makes it difficult later when we want to apply them to the setting of new networks and deep learning and makes it like all that we have a lot of matrices that are concatenated.
+
+0:39:51.000 --> 0:40:06.000
+ So we need to use the chain rule and we also have kind of changing dimensions. So we really need to understand the basic setting of a derivative of a derivative in higher dimensions and also of all these matrix multiplication stuff.
+
+0:40:06.000 --> 0:40:18.000
+ Because when you're like good to go for these things it will be easy for you to practices and to apply it in a more complex setting where we have a lot of values, a lot of variables, etc.
+
+0:40:18.000 --> 0:40:26.000
+ So try to understand these concepts pretty well and then we can just apply them later in the lecture.
+
+0:40:26.000 --> 0:40:34.000
+ So again in overview I said like we look at different settings the easiest setting is the real valued settings. So we have a function from r to r.
+
+0:40:34.000 --> 0:40:43.000
+ We call it the derivative is just called the scalar derivative. I mean call it by the sign f prime of x. This is the thing that we did in high school already.
+
+0:40:43.000 --> 0:41:01.000
+ And the setting the higher dimension is setting one example here is the fine which is going from r and to r and the derivative of such a function is called gradient and we denoted by this nub last symbol which is this triangle but just reversed of f of x.
+
+0:41:01.000 --> 0:41:16.000
+ And similar when we look at a function which is taking us input a matrix and going into r so from r m to the power of n times m to r and we also call the derivative of such a function gradient and we use the same symbol this nub last symbol.
+
+0:41:16.000 --> 0:41:31.000
+ And the last setting we want to have look at is a function from r and to r m so both sides we have a higher dimension of setting and here we call the derivative a Jacobian and the notation here will be j and then a subscript we have this f.
+
+0:41:31.000 --> 0:41:38.000
+ So these are the settings that we're going to have a look at and we want to stop at the most easiest one scalar derivative.
+
+0:41:38.000 --> 0:41:48.000
+ So this is easy and we have this real value function the notation as I said before as f prime of x or sometimes we also call it the f of the x.
+
+0:41:48.000 --> 0:42:06.000
+ And the geometrical interpretation of the derivative of such a real valued function is something that we looked at already a lot and it's representing essentially at a chosen input value the slope of the tangent line to the graph of the function at that point.
+
+0:42:06.000 --> 0:42:18.000
+ So we just like this red line here is describing the slope at certain input value and this is just a derivative of this function at this input value.
+
+0:42:18.000 --> 0:42:24.000
+ The slope of this tangent line so this is the geometrical interpretation.
+
+0:42:24.000 --> 0:42:36.000
+ On the following two slides I summarized the most important rule when it comes to derivation. So here on the first slide I gave or included the most common functions and the respective derivatives on the second slide here.
+
+0:42:36.000 --> 0:42:51.000
+ I included the rules when it comes to a combination of two function. So when you have a combination like the multiplication between two functions so f of x times g for example you need to follow the product rule in order to determine the derivative.
+
+0:42:51.000 --> 0:43:12.000
+ So make sure that you remind the most or the derivatives of the most common functions and also all these the relation rules when it comes to a combination of two functions because they will help you to be able to determine every possible or arbitrary and the derivative when it comes to the lecture content in the future.
+
+0:43:12.000 --> 0:43:41.000
+ So let's now switch to the higher dimension setting. So first of all we want to have a look at the multivariate function f in this case we start with the setting where our function is going from our end to our on the left side on this slide you can see a visualization of such a function and in this case we start from the space R2 and for each position in R2 we assign with the function f with our multivariate function f.
+
+0:43:41.000 --> 0:43:55.000
+ With our multivariate function a function value which is a real value to each of the values in R2 and the graph that you can see here is one example of a graph for such a multi-variate function.
+
+0:43:55.000 --> 0:44:06.000
+ So you see that the setting is much more complicated than in the real valued world of functions. So the derivative of such a function is now given by a gradient as I mentioned before.
+
+0:44:06.000 --> 0:44:19.000
+ And the notation of such a gradient is given by this NABLAS symbol which is just a reversed delta symbol and our gradient function is now going from Rn to Rn.
+
+0:44:19.000 --> 0:44:31.000
+ So it's important to mention here that our output values not a real value anymore but now we have as an output a vector with N components.
+
+0:44:31.000 --> 0:44:55.000
+ And on the second line you can see how the gradient is defined and it's defined like the function is defined you take X as an input which is a vector in Rn and the output is now a vector where you can see that when you look at the first component the first component is given by the partial derivative of f of x with respect to the first variable.
+
+0:44:55.000 --> 0:45:09.000
+ And correspondingly you determine the second up to the end component of our output vector. So it's just a part partial derivative of our function f and then with respect to the variables x1, x2, up to xn.
+
+0:45:09.000 --> 0:45:14.000
+ So that's the definition of our gradient here. Let's have a look at a more complex situation.
+
+0:45:14.000 --> 0:45:26.000
+ So when we now want to have a look at a function f which is going from the space R to the power of n times m so our input is essentially a matrix and to the space R.
+
+0:45:26.000 --> 0:45:48.000
+ Then our visualization would look much more complicated and it's much more difficult to visualize such a function. But we also call the corresponding derivative gradient and the notation is the same we also use the snap-less symbol and our gradient function is now going from the space R to the power of n times m to R to the power of n times m.
+
+0:45:48.000 --> 0:45:58.000
+ So the output again is now not a vector but a matrix and it's pretty similar to the idea of the gradient of the function from R into R.
+
+0:45:58.000 --> 0:46:17.000
+ Because here you can see that the output is a matrix and if you look at one special value of our output matrix for example again the first position 11 and you see that the value over there is the partial derivative of our function with respect to the first or to the variable x11.
+
+0:46:17.000 --> 0:46:31.000
+ And then you just complete the whole matrix with the partial derivatives of all variables of our input. So x which is in this case a matrix and then you can just build up the function similar to what we saw on the slide before.
+
+0:46:31.000 --> 0:46:36.000
+ So this is just the same idea just for another setting.
+
+0:46:36.000 --> 0:46:53.000
+ On the following two slides we included two examples for you to better understand the concept of a gradient. So we included two functions f and g which are both functions from R to R so pretty simple functions and we determine the gradient for both of the functions.
+
+0:46:53.000 --> 0:47:06.000
+ So try to understand the calculation here or maybe better even try to do the calculations on your own and then compare your work to the solutions here on the slides.
+
+0:47:06.000 --> 0:47:14.000
+ Okay, so now I want to move on to the last setting that we want to talk about in this part of calculus which is the vector valued functions.
+
+0:47:14.000 --> 0:47:31.000
+ So what is a vector value function? So a vector value function is defined as a function from R and to Rm in comparison to the other settings before where the input space always have been Rm or even higher and the output space has always been R.
+
+0:47:31.000 --> 0:47:47.000
+ In this case now we have both in the input space and in the output space a higher dimensional space. So Rm and Rm that makes this function the most complicated one that we saw before or that we saw in general here in this tutorial session.
+
+0:47:47.000 --> 0:48:00.000
+ And if you have a look at the second line you can see the definition of the function so it takes as input a vector which is here denoted by x and which is just a tuple with n elements because it's just an element of Rm.
+
+0:48:00.000 --> 0:48:11.000
+ So the elements are demoted from x1 to up to xm and the output of our function f is now a vector again but this vector is an element of Rm.
+
+0:48:11.000 --> 0:48:18.000
+ So it has components which are elements real values and we have M of them in a tuple.
+
+0:48:18.000 --> 0:48:26.000
+ So let's have a look at the first of them. So f, the first component of our output vector is given by f1 of x.
+
+0:48:26.000 --> 0:48:39.000
+ And here f1 is determining or defining another function which is going from Rm is it takes x as an input so it's going from Rm and its output value is an element of R so just a real value.
+
+0:48:39.000 --> 0:48:54.000
+ And this is the setting that we saw before it's a function from Rm to R and we have these functions we have M function of them all concatenated or put in this vector and this is the output of our function f.
+
+0:48:54.000 --> 0:49:12.000
+ When we now look at the derivative of our vector value function and the derivative is called the Jacobian matrix and it's denoted by j with the n-dxf and it's going from the space Rm to the space R to the power of m times n.
+
+0:49:12.000 --> 0:49:30.000
+ And you can see here in the definition in the second line that it takes as an input a value or a vector x which is an element of Rm so it again consists of n elements x1 up to xn like on the left side and the output is now a matrix.
+
+0:49:30.000 --> 0:49:48.000
+ And this matrix is just a generalization of the gradient that we have been looking before so look at the first row of this matrix. The first row is now given by the partial derivatives of this function f1 which has been a function from Rm to R.
+
+0:49:48.000 --> 0:50:11.000
+ And the row is given by all the partial derivatives with respect to the first variable x1 up to the variable xn and this is the first row. The second row is now doing the same with the function f2 and then we go down and repeat this procedure up to the mth row where we have the partial derivatives of the f of the m's function fm.
+
+0:50:11.000 --> 0:50:22.000
+ So you can see that it's just kind of combining the gradients of the functions f1 up to fm so it's kind of a generalization of the concept of the gradient.
+
+0:50:22.000 --> 0:50:35.000
+ Again we included an example for you to practice your understanding and here we define the function f which is going from R2 to R2 and we define it on these slides.
+
+0:50:35.000 --> 0:50:45.000
+ So just try to understand or maybe try to derive on your own the derivatives of this function and then compare your solutions to the solutions here on this slide.
+
+0:50:45.000 --> 0:50:52.000
+ So before we finish the second part of our tutorial session today I want to go a little bit more into detail of the chain rule.
+
+0:50:52.000 --> 0:51:07.000
+ We saw the chain rule already before when I introduced the main or the most important derivation rules but I want to go a little bit more into detail because the chain rule might be the most difficult of these rules and also it will play the most important rule in the item.
+
+0:51:07.000 --> 0:51:08.000
+ The setting here.
+
+0:51:08.000 --> 0:51:10.000
+ So let's have a look at it.
+
+0:51:10.000 --> 0:51:22.000
+ The setting is now that we are back at a real valued function function so we have a look at a function which is going from R to R and the setting is that we have a composition of two functions.
+
+0:51:22.000 --> 0:51:30.000
+ So we are given a function h of x which is defined by the composition of f and g so it is defined by f of g of x.
+
+0:51:30.000 --> 0:51:40.000
+ And now we want our task is to determine the derivative of this composition of functions and this is the setting where we use the chain rule.
+
+0:51:40.000 --> 0:51:51.000
+ And we have now kind of four steps that you need to follow in order to use the chain rule and to determine the correct derivative of this function.
+
+0:51:51.000 --> 0:51:53.000
+ So let's look at these steps.
+
+0:51:53.000 --> 0:52:02.000
+ The first step is the introduction of an intermediate variable so the intermediate variable here will be our variable u which is defined to be g of x.
+
+0:52:02.000 --> 0:52:14.000
+ This is our intermediate one because it's the one inside the function of f so we just call it u then we can write our function h of x as f of u.
+
+0:52:14.000 --> 0:52:26.000
+ And the second step is now that we have to derive two derivatives namely the first one is the derivative of our function f with respect to our intermediate variable u.
+
+0:52:26.000 --> 0:52:38.000
+ And the second one is the derivative of our function g with respect to our variable x. And you can also call it the derivative of our function of variable u with respect to our variable x.
+
+0:52:38.000 --> 0:52:50.000
+ When you did that then you can just compose these two derivatives and then we'll then give you the derivative of h with respect to the variable x.
+
+0:52:50.000 --> 0:52:54.000
+ So you just compose them you just multiply them.
+
+0:52:54.000 --> 0:53:05.000
+ And what you do then in the last step is you substitute the intermediate variable back to the original function so you go back from u to g of x.
+
+0:53:05.000 --> 0:53:11.000
+ And we will have a look at an example because that my this might look a little bit abstract but it's not too difficult.
+
+0:53:11.000 --> 0:53:20.000
+ So let's have a function here which is given by h of x is the sign of x to the power of two.
+
+0:53:20.000 --> 0:53:30.000
+ So this is essentially to the composition of two functions namely the first function being the sign function and the second one is the x to the power of two.
+
+0:53:30.000 --> 0:53:35.000
+ And our task here is now that we want to determine the derivative of it.
+
+0:53:35.000 --> 0:53:41.000
+ So as I mentioned before we have here like this setting of the composition of two functions f and g.
+
+0:53:41.000 --> 0:53:49.000
+ F is here defined as sign of x and g is defined as x to the power of two. So x squared.
+
+0:53:49.000 --> 0:54:02.000
+ And again we follow our first step so the first step is to introduce our intermediate variable as we saw before. So let us define u the variable u to be the variable x squared.
+
+0:54:02.000 --> 0:54:12.000
+ And the second step we now want to calculate the two derivatives first of f with respect to u and second one of g with respect to x.
+
+0:54:12.000 --> 0:54:25.000
+ And you see here the derivative of f with respect to u will now be cosine of u and the derivative of g with respect to x is now two times x.
+
+0:54:25.000 --> 0:54:41.000
+ And what we then have to do is we have to multiply these both derivatives. So the derivative of the function h with respect to x is now the derivative of f with respect to u times the derivative of u with respect to x.
+
+0:54:41.000 --> 0:54:46.000
+ So we obtain cosine of u times two times x.
+
+0:54:46.000 --> 0:54:56.000
+ And the first step now was that we want to substitute the intermediate variable back. So now we can just instead of u we substitute our x squared.
+
+0:54:56.000 --> 0:55:03.000
+ So then our derivative of h with respect to x is giving us cosine of x squared times two x.
+
+0:55:03.000 --> 0:55:12.000
+ And this is an example. So for how you can apply the chain rule to a setting like our setting that we have here.
+
+0:55:12.000 --> 0:55:21.000
+ So I highly recommend you to understand these steps if you don't understand them yet. Just have a look at them. They are not too difficult.
+
+0:55:21.000 --> 0:55:25.000
+ But this is a nice idea of how you can solve the chain.
+
+0:55:25.000 --> 0:55:34.000
+ So the last slide I want to introduce the total derivative chain rule. So this is referring to a little bit more complicated setting than we saw before.
+
+0:55:34.000 --> 0:55:48.000
+ I mean now we not only have a function which is a composition of two functions, but we now have a function which takes more than one input value namely x, but also u one of x until u and of x.
+
+0:55:48.000 --> 0:55:58.000
+ And then we want to determine the derivative with respect to x. And this is just using or applying the chain rule to all of the different settings here.
+
+0:55:58.000 --> 0:56:13.000
+ So the first part of our summation will be the derivative of f with respect to x. And then you have the summation of all different chain rules applied to all of the compositions that we have here like the composition of f with u one up to the composition of f with u n.
+
+0:56:13.000 --> 0:56:22.000
+ And then you have to apply out to some all of the applications of this chain rule and then you get kind of the total derivative chain rule.
+
+0:56:22.000 --> 0:56:36.000
+ So in case that we will be needing this in the application for our neural networks later, it might be interesting to have this in mind because this is really really useful when you have more than one input variables.
+
+0:56:36.000 --> 0:56:42.000
+ Okay, so this has been everything for our calculus part. So let's move on to our probability part.
+
+0:56:42.000 --> 0:56:59.000
+ Okay, probability theory is now forming the last and third part of our tutorial session. And I want to talk about the main concepts of probability theory beginning with the definition of probability spaces random variables and also the probability distribution functions.
+
+0:56:59.000 --> 0:57:12.000
+ And finally, we want to introduce or review the concept of mean and variances. And we also want to have a look at the most important probability distribution like a normal distribution or uniform distribution.
+
+0:57:12.000 --> 0:57:20.000
+ Okay, so let us start with the definition of a probability space. A probability space essentially is describing a random experiment.
+
+0:57:20.000 --> 0:57:30.000
+ Always when we talk in probability theory, we are looking at the random experiment and we work on this setting. So this is kind of the basic setting that we are looking at.
+
+0:57:30.000 --> 0:57:40.000
+ And for everything that we are doing, we can define this basic setting. So let us have a look how it is defined. So it's consisting essentially of three elements.
+
+0:57:40.000 --> 0:57:55.000
+ The first element is our sample space and it's denoted with the omega, the big omega. And the omega is describing a set, which is representing the set of all possible outcomes of our random experiment.
+
+0:57:55.000 --> 0:58:12.000
+ The second element is our event space F. Our event space F is now a set and the elements of our set are again sets. And they are subset of omega describing events. So we are looking at possible events for our random experiment.
+
+0:58:12.000 --> 0:58:18.000
+ And these events are all represented in our event space F.
+
+0:58:18.000 --> 0:58:37.000
+ So these are the underlying definitions. And I think this one is known to everybody. It's our probability measure, which is denoted by this P. And P is just a definition or the definition of P is it is a function, which is defined on the set F and going into the real values.
+
+0:58:37.000 --> 0:58:56.000
+ So into R and it satisfies for the following three properties that we want to have a look at. So as it is giving us a probability, it is a non negative function. So on all elements of F, which are sets, it has to be bigger or equal to zero.
+
+0:58:56.000 --> 0:59:10.000
+ The second property is that our probability function, when we use it on the whole set of all possible outcomes. So that's our omega, which is always an element of our set F, our event space F.
+
+0:59:10.000 --> 0:59:28.000
+ Then the probability always has to be one. So this is the biggest probability that our probability measure can take and it's always defined to be one for the biggest possible set.
+
+0:59:28.000 --> 0:59:45.000
+ So in different events, we call them OBD node and by A1 up to A n, which are all elements of our set F. And when we take the union of these sets and the probability of this union must be equal to the sum of the probability of each of these events.
+
+0:59:45.000 --> 1:00:03.000
+ Three properties that our function has to satisfy in order to be a probability measure function. So whenever we talk from a random experiment, we're going to have this underlying set up, which is consisting of our set omega, our set F and our probability measure P.
+
+1:00:03.000 --> 1:00:19.000
+ So as I said in the beginning, the probability space provides a form and model of a random experiment. So whenever you struggle to understand what is going on, try to go back and try to define the probability space and what are you looking at?
+
+1:00:19.000 --> 1:00:30.000
+ Okay, so we want to have a look at one example. It's a really famous and popular example in probability theory. It's namely tossing a six sided die.
+
+1:00:30.000 --> 1:00:48.000
+ And I want to look with you together. What is our probability space here? So the sample space was defined as the set of all possible outcomes. Of course, for a die, our outcomes are the numbers one, two, three, four, five, four, six. So this is our sample space.
+
+1:00:48.000 --> 1:01:04.000
+ Our event space is now depending on how we want to define it. I defined here three possible event spaces and you can choose on your own depending on how you set up your random experiment, you have to define your own event space.
+
+1:01:04.000 --> 1:01:17.000
+ The first one that we are looking at is our F one here. It's the smallest possible. So it's containing the empty set and it's containing whole omega. This is kind of the most simple one.
+
+1:01:17.000 --> 1:01:27.000
+ Another one, which is also pretty simple is our F two, which is denoted as P of omega. And this is just a set of all possible subsets of omega.
+
+1:01:27.000 --> 1:01:38.000
+ So this is the biggest one that we can have. And our F three is now an example for a third possibility, where we don't have the smallest one and not the biggest one, but we now have kind of one in between.
+
+1:01:38.000 --> 1:01:47.000
+ And here you can see that the elements are defined to be the empty set, the whole set omega. And we also have two other sets, a one and a two.
+
+1:01:47.000 --> 1:01:58.000
+ And one is the set of odd numbers, so including one, three and five and a two is the set of even numbers two, four and six.
+
+1:01:58.000 --> 1:02:13.000
+ So as I said, the probability measure is now a function, which is going from F to R. And we have to make sure that the probability measure of our empty set equals to zero and the probability measure of our omega equals to one.
+
+1:02:13.000 --> 1:02:29.000
+ And now we can have a look at the third event space, our F three. And in that case, we have more than only these two sets. We have more than the empty set and the whole set omega, but we also have to set a one and a two.
+
+1:02:29.000 --> 1:02:56.000
+ What we can see is that our a one and our a two, if we take the union of these two events, we get the whole set omega. So what we know them with the third probability of our probability measure, you can just go back to the slide before if you don't remind it, you can just derive that you have to know or you have to make sure that the probability of a one plus the probability of a two must be equal to one.
+
+1:02:56.000 --> 1:03:01.000
+ So this is what we know that we have to satisfy as a probability measure.
+
+1:03:01.000 --> 1:03:18.000
+ And now we want to take as an example the event space F three. So the possible probability measure here, like we can look at one possibility where we define the probability of a one equal to the probability of a two, namely both being one half.
+
+1:03:18.000 --> 1:03:39.000
+ So if we take the sum of both of them, we obtain one, which is then fine with the observation that we derived before another possibility would be that we define our probability measure on a one, be equal to one fourth and our probability measure on a two, be equal to three, four.
+
+1:03:39.000 --> 1:03:49.000
+ So this is also adding up to one, but these are two different measure probability measures that you can define on the event space F three.
+
+1:03:49.000 --> 1:04:02.000
+ So it depends on how you define your probability measure of how your random experiment looks like. And this is kind of the distribution that random variable can take on.
+
+1:04:02.000 --> 1:04:19.000
+ So I said random variable. So what is a random variable now? A random variable is now a function which is defined on the probability space. So this two, two, three elements and it's a mapping from the sample space to the real numbers.
+
+1:04:19.000 --> 1:04:36.000
+ So the definition now is giving our x, which is the notation for our random variable is going from our space omega into the space r. So for each element in our sample space, we assign an element in R.
+
+1:04:36.000 --> 1:04:52.000
+ And for random variables in general, we distinguish between two settings namely the first one being the discrete setting and the second one being the continuous setting. So we're going to have a look at examples for discrete and continuous settings.
+
+1:04:52.000 --> 1:05:11.000
+ So again, I want to talk about tossing a fair six sided die. So this is again the same example, then we saw before for our probability setting and the underlying experiment as we derived before is now that we have our omega or event space, which again is the set from the numbers of one up to six.
+
+1:05:11.000 --> 1:05:30.000
+ Let me have our event space, which I now define as being the set of all possible subsets of omega. So our P of omega and we define our probability measure as P of x equals to one sticks for all elements in our sample space.
+
+1:05:30.000 --> 1:05:40.000
+ So for every number that I can let our die can result in I have the probability one thing. So it's kind of a uniform distribution.
+
+1:05:40.000 --> 1:05:53.000
+ This is also we choose this one because I call this example tossing a fair six sided side. So of course, we need to have come like our uniform distribution here. Otherwise, it wouldn't be a fair die.
+
+1:05:53.000 --> 1:06:02.000
+ Okay, so what is now our random variable because this is defined on top of our probability space. And here we can choose for different random variables.
+
+1:06:02.000 --> 1:06:09.000
+ And the first one that I want to choose here is the random variable, which represents the number that appears on the die.
+
+1:06:09.000 --> 1:06:24.000
+ So our x is defined on the omega, so on our sample space and it's going into R. But in this case, it's going in the set one, two, three, four, five, six. So this is the subset of R. Of course, so that's validified.
+
+1:06:24.000 --> 1:06:36.000
+ And as the subset where we're resulting in is discrete because we only have six elements and it's not continuous. We call this random variable, it is discrete random variable.
+
+1:06:36.000 --> 1:06:53.000
+ So this is important for you to remember. And so one example here, it's a really simple random random variable here because it's essentially just giving the outcome of our die of our dice.
+
+1:06:53.000 --> 1:07:09.000
+ So the example now is for one element in omega, for example, we take our omega equals to four, like the small like the sign which is here being equal to w is called the small omega.
+
+1:07:09.000 --> 1:07:22.000
+ And if we choose the small omega one element in our big omega set, we choose it here, for example, to be equal to four. Then x of omega would be four because we just say, okay, it's kind of the identical function.
+
+1:07:22.000 --> 1:07:30.000
+ We look at what our die is showing us, it's showing us the number four. So the outcome of our random variable is four.
+
+1:07:30.000 --> 1:07:45.000
+ And now we defined in the first line our probability measure. So now we can see p x equals to four. This is something which we always write like p. And then we use the random variable equals to something.
+
+1:07:45.000 --> 1:08:03.000
+ So here we can see p of the probability that x is equals to four is the same as p like the probability. And then we have to look at the set that I defined in there. So all the omigas in our big omega set such that x of our omega equals to four.
+
+1:08:03.000 --> 1:08:17.000
+ This is essentially what x equals to four means. It's just looking at the set and we're looking at all the elements in our sample space omega such that if we put this element in our random variable x, we obtain the number four.
+
+1:08:17.000 --> 1:08:29.000
+ And we know by definition of our random variable that this set only contains the number four. Because when I take the number four and I put it into my random variable, I get the number four.
+
+1:08:29.000 --> 1:08:43.000
+ If I put anything else in it, I don't get the number four. So this is only a containing the number four. So it's the probability of the set which is only containing number four. And then we know that the probability now is one six.
+
+1:08:43.000 --> 1:08:55.000
+ So I hope it's not too confusing with this notation, but this essentially is what we mean when we write p of the probability x equals to four.
+
+1:08:55.000 --> 1:09:05.000
+ So let us have a look at another discrete example. It's also a simple example. It's flipping a fair coin two times.
+
+1:09:05.000 --> 1:09:17.000
+ So now again, we have to define our probability space as I said in the beginning. So our omigas now is the set of all possible outcomes of our experiment of our random experiment.
+
+1:09:17.000 --> 1:09:31.000
+ And if I flip a coin, I can get either hat or tail. And if I do it twice, I can have like the outcomes that I can have is either I get two times a hat where I get in the first flip a hat and then a tail.
+
+1:09:31.000 --> 1:09:48.000
+ And the second or I get in my second flip ahead and my first one, a tail. So head tail and tail head are also two elements or I get two times tail. So this is the possible outcomes of our random variable here.
+
+1:09:48.000 --> 1:10:04.000
+ Again, we choose for our event space, and p of omega, which is just all possible subsets of our omega, which is always the most simple, which is just the most simple choice for event space f.
+
+1:10:04.000 --> 1:10:20.000
+ And again, as I said, flipping a fair coin two times, we need to define, otherwise we wouldn't be a fair coin to be our probability measure to be equal to p of omega equals to one fourth for all possible elements in our sample space omega.
+
+1:10:20.000 --> 1:10:30.000
+ So for all possible outcomes, I have the same probability, 91 fourth because our sample space omega consists of four elements.
+
+1:10:30.000 --> 1:10:39.000
+ Okay, so this is the setup for the random experiment, which I call flipping a fair coin two times.
+
+1:10:39.000 --> 1:10:47.000
+ Now we can define a more complex random variable here our x is now the number of heads that appeared in the two flips.
+
+1:10:47.000 --> 1:11:08.000
+ So our x is again function defined on our sample space omega into R, but now like the outcome space is only containing three elements, having zero, one and two because the outcome can be either that I don't have any head, I get one head or in my flips, I get two times ahead.
+
+1:11:08.000 --> 1:11:21.000
+ So the outcome like the possible outcomes here are zero, one and two. And again, the outcome space or the target space of my random variable is again a discrete set.
+
+1:11:21.000 --> 1:11:26.000
+ So again, here we are looking at a discrete random variable.
+
+1:11:26.000 --> 1:11:41.000
+ So this is the second example of one, but here the random variable is a little bit more complex than in the one before.
+
+1:11:41.000 --> 1:11:51.000
+ Okay, so now let's have again, let's have a look again at one specific example or outcome in our sample space. And here we choose for an outcome small omega, the element where the first flip gives us a tail and the second one gives us a head.
+
+1:11:51.000 --> 1:12:03.000
+ And then we know if we put this one into our random variable, which is representing the number of heads of our outcome, we know that the outcome of our random variable would be one.
+
+1:12:03.000 --> 1:12:15.000
+ So this is more complex and here you can also have a look at our probability measure that we defined up there. And again, I want to talk about what does it mean to write p of x equals to one.
+
+1:12:15.000 --> 1:12:29.000
+ And here again, x equals to one is just a description for a set. And the set here is the set of all omigas in our sample space omega such that when I put this omega in my random variable, I get the number one.
+
+1:12:29.000 --> 1:12:50.000
+ So I have to look in all possible outcomes in my sample space and look which one result in my random variable to the number one. And this is definitely just two of the outcomes namely the one where the first flip gives us a head and the second one a tail or the other way around the first flip gives us a tail and the second flip ahead.
+
+1:12:50.000 --> 1:13:08.000
+ Because then always I just have one head and the other one is a tail. So I have here in this set, which I described in the second term, I can just define it as the set, including the elements h and t and the two and h.
+
+1:13:08.000 --> 1:13:17.000
+ So this is two of the four to the probability here as we have a uniform probability is now one half.
+
+1:13:17.000 --> 1:13:28.000
+ Okay, so this is another example. I really quick want to look at also a continuous example. So let us have a look at radioactive decay.
+
+1:13:28.000 --> 1:13:35.000
+ So when we want to have a look at a particle, which is radioactive and we want to look at the decay of it.
+
+1:13:35.000 --> 1:13:49.000
+ And the underlying experiment that we are looking at is a set omega, which is now defined to be the real valued or the set of all real values, greater or equal to zero.
+
+1:13:49.000 --> 1:13:59.000
+ So the positive part of the real values. And again, we choose our event space f to be the p of omega. So all possible subsets of our omega.
+
+1:13:59.000 --> 1:14:13.000
+ And we choose in general a probability measure p. This is much more complicated to define the probability measure here. So I don't do it by hand, but there are possible choices for probability measures.
+
+1:14:13.000 --> 1:14:28.000
+ Okay, so now we want to have a look at the continuous random variable. So let now let's now have a look at the random variable here X, which is indicating the amount of time that it takes for radioactive particle to decay.
+
+1:14:28.000 --> 1:14:38.000
+ And so the definition of our random variable is now a function X, which is going from R greater or equal to zero into R greater or equal to zero.
+
+1:14:38.000 --> 1:14:49.000
+ Because the outcome only can be positive because we're talking about time. And the input is our omega. And this is also our definition of R greater or equal to zero.
+
+1:14:49.000 --> 1:15:01.000
+ And this one is now as you see that the outcome space of our X is a continuous set because it's like the real values all greater or equal to zero. We have a continuous random variable.
+
+1:15:01.000 --> 1:15:10.000
+ Okay, so this is one example here. The probability measure is now defined on the set of events f. And it's now used for random variable as follows.
+
+1:15:10.000 --> 1:15:22.000
+ So again, we have this usage of our probability measure in relation with our X. So we can say what is the probability of our random variable being between a and b.
+
+1:15:22.000 --> 1:15:36.000
+ And this again is just looking at our sample space omega big omega and it's taking all the small omigas in the sample space for which X of omega lies between a and b.
+
+1:15:36.000 --> 1:15:46.000
+ And this is just giving us the probability of this set. And then it's depending on how we defined our probability measure depends on what this gives us.
+
+1:15:46.000 --> 1:15:59.000
+ Okay, so this is an example of a continuous setting. And I hope that you better understood like when we talk about a random variable that we always have this underlying probability space on top or on the basis.
+
+1:15:59.000 --> 1:16:06.000
+ The probability or the random variable is just defined on top of such an random experiment.
+
+1:16:06.000 --> 1:16:18.000
+ Okay, after having defined the most important basic concepts of probability theory, which are including the probability space and the random variable, we now want to have a look at probability measure of the random variable.
+
+1:16:18.000 --> 1:16:32.000
+ And we can specify the probability measure of a random variable with alternative functions. And we call them here cumulative density function CDF, probability mass function PMF and the probability density function.
+
+1:16:32.000 --> 1:16:44.000
+ And essentially, we have to make a difference between discrete and continuous random variables. And I included a short overview over these function, which are describing our probability measure.
+
+1:16:44.000 --> 1:16:55.000
+ And the first column or second column is giving us the cumulative density function. This is something which is the same for both discrete and continuous random variable.
+
+1:16:55.000 --> 1:17:07.000
+ And this is a function which is denoted by a big F with a subscript x for our random variable x. And it's giving us the probability that our random variable is smaller equal to the value x.
+
+1:17:07.000 --> 1:17:14.000
+ And this can be defined as I said before for discrete and continuous probability or random variables.
+
+1:17:14.000 --> 1:17:23.000
+ The third column is now what makes the difference between a discrete and a continuous case. In the discrete case, you can define the probability mass function.
+
+1:17:23.000 --> 1:17:31.000
+ This is now giving the probability that our random variable is taking the value x. So it's just looking at one specific value.
+
+1:17:31.000 --> 1:17:38.000
+ This is not really possible for continuous case. So here we define in the continuous case the probability density function.
+
+1:17:38.000 --> 1:17:46.000
+ And the probability density function is essentially just the derivative of our cumulative density function in the continuous case.
+
+1:17:46.000 --> 1:17:56.000
+ In the continuous case, most of the time the CDF is differentiable, which makes it possible to define our PDF as the derivative of our CDF.
+
+1:17:56.000 --> 1:18:05.000
+ Okay, so let's just shortly review the definition of these functions. I said the cumulative distribution function is for both settings the same.
+
+1:18:05.000 --> 1:18:20.000
+ And it's essentially a function F of x which is defined from R into the interval between 0 and 1. And it's defined to be the probability that our random variable is smaller or equal to the value of x small x.
+
+1:18:20.000 --> 1:18:31.000
+ And it also has four properties. I won't read through all of them, but you can just have a look. But essentially it just means that it always have to end in one.
+
+1:18:31.000 --> 1:18:37.000
+ This is the biggest possible value that it can take and it starts at 0.
+
+1:18:37.000 --> 1:18:39.000
+ Okay.
+
+1:18:39.000 --> 1:18:47.000
+ So there you also have an image of a possible sample cumulative function.
+
+1:18:47.000 --> 1:18:57.000
+ In the discrete case, I said that we can have a look at the probability mass function. And here the probability mass function is denoted by a small p with a subscript x for the random variable x.
+
+1:18:57.000 --> 1:19:10.000
+ And it is defined to go from the sample space into R. And I said before it's just giving us the probability that our random variable in the discrete case is equal to the value of x.
+
+1:19:10.000 --> 1:19:27.000
+ And again, we have some properties which I just derived here. It has to be between 0 and 1 which is natural because it just representing a probability and it also has to sum up up to 1.
+
+1:19:27.000 --> 1:19:52.000
+ Okay. Now we have one example of a PMF and a CDF. So this is the discrete case if we want to have a look at the sum of two dices. So you see that the cumulative density function is summing up up to 1 and the probability mass function is essentially giving you the probability for all of the possible outcomes which are here ranging between 2 and 12.
+
+1:19:52.000 --> 1:20:05.000
+ Okay. And in the continuous case, I said that we're going to have a look or we have the probability density function which is now defined as the derivative of our cumulative distribution function f of x.
+
+1:20:05.000 --> 1:20:20.000
+ So it's essentially just the definition here. It's given by a small f with a subscript x for the random variable x. And it's going from omega into R. And it's just defined as the derivative of our cumulative distribution function.
+
+1:20:20.000 --> 1:20:40.000
+ Again, we have like very nice properties and I also included a figure so that you can better have a look at this one. So this is describing the continuous case. And it's important to mention here that the value of a PDF so probability density function at any given point x is not the probability of that event.
+
+1:20:40.000 --> 1:20:57.000
+ Because here we are in the continuous case and that makes it more more difficult. So we can't really describe it as the probability of the input value, but it's more kind of the space under the graph of giving you the probability.
+
+1:20:57.000 --> 1:21:01.000
+ So this is the relationship to the cumulative distribution function.
+
+1:21:01.000 --> 1:21:18.000
+ Okay, so now finally, let's have a look at the concept of expectation and variance of a random variable. So let us start with the expectation. So the idea of the expectation is that it's given or it's defining a weighted average of the values that the random variable can take on.
+
+1:21:18.000 --> 1:21:27.000
+ And the weights that we are using here are just given by the probability measure function, which is corresponding to our random variable x.
+
+1:21:27.000 --> 1:21:38.000
+ So I said before that we always have to make a difference between the discrete and continuous setting. This is the same here for our expectation. So first of all, we want to look at the definition in the discrete case.
+
+1:21:38.000 --> 1:21:55.000
+ So let us assume that x is a discrete random variable and we have a probability mass function p of x. And now the expectation of x is defined as e from x, e of x, which is equal to the sum over all elements in our sample space omega.
+
+1:21:55.000 --> 1:22:11.000
+ And over the function x times the probability mass function of x of p x of x. So here you can easily see this is the weighted average of all our elements in our sample space and the weights are given by our probability mass function.
+
+1:22:11.000 --> 1:22:26.000
+ So similar in the continuous setting, the definition is quite the same. So here we assume that x is now continuous random variable and then instead of a probability mass function, we have our probability distribution function f of x.
+
+1:22:26.000 --> 1:22:42.000
+ And now our expectation is defined by an integral instead of a sum. So e of x equals the integral from minus infinity to infinity over the function x times f of x where f of x is our probability distribution function.
+
+1:22:42.000 --> 1:22:57.000
+ So this is like very much the same as just in the discrete setting and in the continuous setting. So now I include it and XR before expectation. And again, I included first of all the definition in our discrete case.
+
+1:22:57.000 --> 1:23:14.000
+ And now we want to look at our random experiment, experiment of tossing a six sided die. So again, as we knew from the previous slides, our omigas now the set of one, two, three, four, five, and six. Because this is all the possible outcomes that our experiment has.
+
+1:23:14.000 --> 1:23:23.000
+ And our x is the random variable, which represents the outcome of the toss. So just kind of the number which is shown on the die.
+
+1:23:23.000 --> 1:23:36.000
+ And we know that our probability mass function here, like the probability that our random variable equals to a specific element in our omigas equals to one six because we have a fair die.
+
+1:23:36.000 --> 1:23:41.000
+ So this is for all elements in our omigas sample space.
+
+1:23:41.000 --> 1:23:55.000
+ And now we can just take the sum, which is defining our expectation of our random variable, which is just summing or calculating the weighted average of all possible outcomes. So the outcomes are one, two, three, four, five, and six.
+
+1:23:55.000 --> 1:24:03.000
+ And the probability for all of them, so the probability mass function as we have a fair die is now one six for all possible outcomes.
+
+1:24:03.000 --> 1:24:16.000
+ So if you take this sum, then you get a 3.5 as result, which definitely makes sense because we have a fair die. So it has to be the center of all possible outcomes.
+
+1:24:16.000 --> 1:24:20.000
+ So this is one example for our expectation.
+
+1:24:20.000 --> 1:24:27.000
+ Okay, the expectation of a random variable has two important properties that we want to have a look on this slide.
+
+1:24:27.000 --> 1:24:39.000
+ And the first property is related to a constant value. So if you have a constant a, which is just an element of r, then the expectation of this constant is just the constant itself.
+
+1:24:39.000 --> 1:24:44.000
+ And that makes total distance because in a constant you don't have anything random.
+
+1:24:44.000 --> 1:25:04.000
+ The second property now is linearity. So the expectation, the operation of expectation is linear. So if we have two random variables here denoted by x and y, and we also have two scalars a and b, and we take a new random variable, which is a times x plus b times y, then we can take the expectation of that.
+
+1:25:04.000 --> 1:25:16.000
+ And this one has to be equal to a times the expectation of x plus b times the expectation of y. And this shows you the linearity of the expectation operation.
+
+1:25:16.000 --> 1:25:25.000
+ And this is very important. So as a hint, you have to use that in the exercise sheet and it will be also very important in the future in the lecture.
+
+1:25:25.000 --> 1:25:42.000
+ Okay, so now we want to have a look at the variance of a random variable and the idea of the variances, roughly speaking, is just a measure how concentrated the distribution of a random variable x is around its expectation or mean.
+
+1:25:42.000 --> 1:25:58.000
+ The expectation and mean is just the same. So you want to know how much how dense it is around its mean and how much it's spreading also. And the definition of a variance of the variance of a random variable is now given by this term.
+
+1:25:58.000 --> 1:26:13.000
+ You just need to compute the expectation of x squared, then you need to know the expectation of x and you need to take this to the power of two. And then you just combine it and subtract it and then you get the variance of x.
+
+1:26:13.000 --> 1:26:28.000
+ On the figure that I'm including here, you can see different probability measures of a normal distribution. And here the red and the blue one are both normal distributions with a mean around zero.
+
+1:26:28.000 --> 1:26:39.000
+ And you can see that the red one has a variance which is much bigger than the one and the blue one. So it's much less concentrated around its mean and it's spreading more.
+
+1:26:39.000 --> 1:26:48.000
+ The blue one is more dense around the mean. So here you can see kind of the difference what it is when you have a bigger variance or smaller variance.
+
+1:26:48.000 --> 1:26:59.000
+ And now let's have a look also at an example of the computation of the variance of a random variable. And again, we want to have a look at the same example that we have been looking for the expectation.
+
+1:26:59.000 --> 1:27:09.000
+ So tossing a fair, six sided die. So the setting is exactly the same. We have our sample space, omega, we have our random variable, which is a discrete random variable.
+
+1:27:09.000 --> 1:27:19.000
+ And we already know the probability mass function, which was a uniform distribution. And we also know the expectation, which we have been computing a few slides ago.
+
+1:27:19.000 --> 1:27:30.000
+ So what we now have to do is we have to compute the expectation of x squared. And then we have to combine it in order to obtain our variance of our random variable x.
+
+1:27:30.000 --> 1:27:37.000
+ So I just let it to you to understand these steps, but please try to understand them and.
+
+1:27:37.000 --> 1:27:50.000
+ Okay, so last but not least also the variance has some important properties that I want to name here pretty quickly. So the first one again, we're looking at a constant, which is nothing random about it.
+
+1:27:50.000 --> 1:27:54.000
+ So the variance of a constant is just zero.
+
+1:27:54.000 --> 1:28:15.000
+ Which makes also interpretation wise a lot of sense. And now if you look at random variable x and you take a new random variable, which is defined as a times x plus b, you obtain for the variance of this new variable that it's equal to a to the power of two times the variance of x.
+
+1:28:15.000 --> 1:28:32.000
+ So the constant part in our term is just vanishing and the scalar, which is multiplied or the scalar, which is used to be multiplied to our random variable is getting outside, but you have to take it to the power of two.
+
+1:28:32.000 --> 1:28:42.000
+ Okay, so again, I also included the image of our normal distributions here, which is showing you different normal distributions with different means and variances.
+
+1:28:42.000 --> 1:28:55.000
+ On this final slide, we summarized the most important probability distribution and we included to discrete ones, the Bernoulli and the Vynomial distribution and to continuous one in the uniform and the normal distribution.
+
+1:28:55.000 --> 1:29:03.000
+ In our lecture, the normal distribution will by far be the most important one. So make sure that you have the information in this table in mind.
+
+1:29:03.000 --> 1:29:12.000
+ And with this slide, we reach the end of our second tutorial session. Thank you so much for listening and see you next week.
+

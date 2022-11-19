@@ -79,7 +79,16 @@ const LecturePage = () => {
     return (
         <div className="LecturePage">
             <div className="LecturePage__video">
-               <video src={lectureVid} controls ref={videoRef} onProgress={handleProgress} />
+                <video controls ref={videoRef} onProgress={handleProgress}>
+                    <source src={lectureVid} type="video/mp4" />
+                    <track
+                        label="English"
+                        kind="captions"
+                        src="/result_full.vtt"
+                        srcLang="en"
+                        default 
+                    />
+                </video>
             </div>
 
             <div className="LecturePage__content">
