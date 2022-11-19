@@ -70,16 +70,17 @@ def query_lecture(lecture_id, query):
     # Search for query
     timestamp = -1
     text = ""
+    matches = []
     for segment in segments:
         text = segment.get("text")
         if query in segment.get("text"):
             timestamp = segment.get("start")
-            break
-    # Return transcript
-    return {
-        "timestamp": timestamp,
-        "text": text
-    }
+            matches.append({
+                "timestamp": timestamp,
+                "text": text
+            })
+
+    return sorted(matches, key=lambda x: x["timestamp"])
 
 
 @app.route('/lecture/<lecture_id>/outline', methods=['GET'])
