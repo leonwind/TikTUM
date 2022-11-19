@@ -95,4 +95,4 @@ def lecture_outline(video_id):
             "title": extract_title_from_frame(os.path.join(frames_path, frame_path)),
         })
 
-    return outline
+    return sorted(outline, key=lambda outline_element: outline_element["timestamp"])
