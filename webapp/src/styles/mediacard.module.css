@@ -27,6 +27,12 @@
     font-size: 250%;
 }
 
+.commentIcon {
+    color: white;
+    font-size: large;
+    text-shadow: 1px 1px 1px black;
+}
+
 .emoji {
     width: 50px;
     height: 30px;

@@ -10,7 +10,6 @@ import CommentIcon from '@mui/icons-material/Comment';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { useState } from 'react';
-import CommentSection from "./CommentSection";
 
 import logo from "../static/tiktum.png";
 import styles from "../styles/footer.module.css";
@@ -30,7 +29,6 @@ export const Footer = () => {
 
     return (
     <React.Fragment>
-      {showComments && <CommentSection onClose={() => {setShowComments(false)}}/>}
       <CssBaseline />
       <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
         <Toolbar>

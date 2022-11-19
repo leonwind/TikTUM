@@ -6,12 +6,16 @@ import Snowfall from "react-snowfall";
 import fireEmoji from "../static/fire-emoji.png"
 import joyEmoji from "../static/joy-emoji.png"
 import shitEmoji from "../static/shit-emoji.png"
+import { IconButton } from "@mui/material";
+import CommentIcon from '@mui/icons-material/Comment';
+
 
 type Props = {
     video: string,
+    onToggleComments: () => void,
 }
 
-export const MediaCard = ({video}: Props) => {
+export const MediaCard = ({video, onToggleComments}: Props) => {
         const shit: CanvasImageSource = document.createElement('img')
         shit.src = shitEmoji;
         const joy: CanvasImageSource = document.createElement('img')
@@ -67,7 +71,9 @@ export const MediaCard = ({video}: Props) => {
                 </video>
 
                 <div className={styles.emojis}>
-                    <AddCommentIcon/>
+                    <IconButton color="inherit" aria-label="open drawer" onClick={onToggleComments}>
+                        <CommentIcon className={styles.commentIcon}/>
+                    </IconButton>
                     <div onClick={() => onEmojiyClick("fire")}>🔥</div>
                     <div onClick={() => onEmojiyClick("joy")}>😂</div>
                     <div onClick={() => onEmojiyClick("shit")}>💩</div>
