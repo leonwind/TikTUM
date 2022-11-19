@@ -11,6 +11,7 @@ import matvecVid from '../static/matvec.mp4';
 import matmatVid from '../static/matmat.mp4';
 import hadamardVid from '../static/hadamard.mp4';
 import planetEarth from '../static/dl-matrix-vector-attenborough.mp4';
+import styles from '../styles/feed.module.css';
 
 
 export default function Feed() {
@@ -23,30 +24,11 @@ export default function Feed() {
 
   return (
     <Stack
-      onScroll={(e) => console.log("scroll")}
-      direction="column"
-      justifyContent="flex-start"
-      alignItems="center"
-      spacing={1}
+        className={styles.container}
+        dir="ltr"
     >
       {conts.map((video, idx) =>
-        <Box
-          // ref={contRefs[i]}
-          key={idx}
-          sx={{
-            border: '3px solid black'
-          }}
-          margin="0"
-          padding="0"
-          alignItems="center"
-          display="flex"
-          justifyContent="center"
-          height="100vh"
-          width="100vw"
-          maxWidth="600px"
-        >
-          <MediaCard video={video}/>
-        </Box>
+          <MediaCard key={idx} video={video}/>
       )}
     </Stack>
   );
