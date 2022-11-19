@@ -37,8 +37,8 @@ export class MediaCard extends Component<{}, {}> {
                 console.log("Canvas context is null");
                 return;
             }
-            let image: any = new Image(50, 30);
-            image.src = "../static/fire-emoji.png"
+            //let image: any = new Image(50, 30);
+            //image.src = "../static/fire-emoji.png"
             switch(emoji) {
                 case "shit": {
                     ctx.fillText("💩", random(0, canvas.width), random(0.8 * canvas.height, canvas.height) );
@@ -56,14 +56,13 @@ export class MediaCard extends Component<{}, {}> {
                     console.log("Emoji not found: ", emoji);
                 }
             }
-            //ctx.fillText("hallo welt", 20, 20, );
             console.log("Spawn emoji " + emoji);
         }
 
         return (
             <div className={styles.body}>
                 <video autoPlay controls>
-                    <source src={demoVid} type="video/mp4"/>
+                    <source src={demoVid} type="video/mp4" className={styles.video}/>
                 </video>
 
                 <div className={styles.buttons}>

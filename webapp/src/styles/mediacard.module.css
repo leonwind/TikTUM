@@ -1,4 +1,5 @@
 .body {
+    position: relative;
     min-height: 100%;
     min-width: 100%;
 }
@@ -31,6 +32,5 @@
     top:0%;
     left:0%;
     resize:none;
-    border: red;
     z-index: 9999;
 }
