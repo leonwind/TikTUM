@@ -1,63 +1,78 @@
 import React, {ChangeEvent, Component, FormEvent} from "react";
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import styles from "../styles/mediacard.module.css";
 import AddCommentIcon from '@mui/icons-material/AddComment';
 import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import AddReactionIcon from '@mui/icons-material/AddReaction';
+import Snowfall from "react-snowfall";
 
-import prof from '../static/hot_prof.jpg'
 import demoVid from "../static/demo_vid.mp4";
 import fireEmoji from "../static/fire-emoji.png"
 import joyEmoji from "../static/joy-emoji.png"
 import shitEmoji from "../static/shit-emoji.png"
 import CommentSection from "./CommentSection";
 
-export class MediaCard extends Component<{}, {}> {
-    render() {
+interface State {
+    shitCount: number,
+    fireCount: number,
+    joyCount: number,
+}
 
-        let random = (min: number, max: number): number => {
-            return Math.floor(Math.random() * (max - min + 1) + min)
+export class MediaCard extends Component<{}, State> {
+
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            shitCount: 0,
+            fireCount: 0,
+            joyCount: 0,
         }
+    }
 
-        const handleClick = (emoji: any) => {
-            const canvas: HTMLCanvasElement | null = document.getElementById("canvas") as HTMLCanvasElement;
-            if (canvas === null) {
-                console.log("Canvas is null");
-                return;
-            }
+    componentDidMount() {
+        this.handleClick = this.handleClick.bind(this);
+    }
 
-            const ctx: CanvasRenderingContext2D | null = canvas.getContext("2d");
-            if (ctx === null) {
-                console.log("Canvas context is null");
-                return;
-            }
-            //let image: any = new Image(50, 30);
-            //image.src = "../static/fire-emoji.png"
-            switch(emoji) {
+    private handleClick(emoji: string) {
+        const shit = document.createElement('img')
+            shit.src = "../static/shit-emoji.png";
+            const joy = document.createElement('img')
+            joy.src = "../static/joy-emoji.png";
+            const fire = document.createElement('img')
+            fire.src = "../static/fire-emoji.png"
+
+            switch (emoji) {
+                case "fire": {
+                    this.setState({fireCount: this.state.fireCount + 15});
+                    setTimeout(() => this.setState({fireCount: 0}), 5000);
+                    break;
+                }
                 case "shit": {
-                    ctx.fillText("💩", random(0, canvas.width), random(0.8 * canvas.height, canvas.height) );
+                    this.setState({shitCount: this.state.shitCount + 15});
+                    setTimeout(() => this.setState({shitCount: 0}), 5000);
                     break;
                 }
                 case "joy": {
-                    ctx.fillText("😂", random(0, canvas.width), random(0.8 * canvas.height, canvas.height) );
+                    this.setState({joyCount: this.state.joyCount + 15});
+                    setTimeout(() => this.setState({joyCount: 0}), 5000);
                     break;
-                }
-                case "fire": {
-                    ctx.fillText("🔥", random(0, canvas.width), random(0.8 * canvas.height, canvas.height) );
-                    break;
-                }
-                default: {
-                    console.log("Emoji not found: ", emoji);
                 }
             }
-            console.log("Spawn emoji " + emoji);
-        }
+            console.log(this.state);
+
+    }
+
+
+    render() {
+        const shit: CanvasImageSource = document.createElement('img')
+        shit.src = shitEmoji;
+        shit.style.width = "100%";
+        shit.style.height = "100%";
+        const joy: CanvasImageSource = document.createElement('img')
+        joy.src = joyEmoji;
+        const fire: CanvasImageSource = document.createElement('img')
+        fire.src = fireEmoji;
 
         return (
             <div className={styles.body}>
@@ -76,15 +91,30 @@ export class MediaCard extends Component<{}, {}> {
                 </div>
 
                 <div className={styles.emojis}>
-                    <img src={fireEmoji} alt="fire emoji" className={styles.emoji}/>
-                    <img src={joyEmoji} alt="fire emoji" className={styles.emoji}/>
-                    <img src={shitEmoji} alt="fire emoji" className={styles.emoji}/>
+                    <img src={fireEmoji} alt="fire emoji" className={styles.emoji} onClick={() => this.handleClick("fire")}/>
+                    <br/>
+                    <img src={joyEmoji} alt="joy emoji" className={styles.emoji} onClick={() => this.handleClick("joy")}/>
+                    <br/>
+                    <img src={shitEmoji} alt="shit emoji" className={styles.emoji} onClick={() => this.handleClick("shit")}/>
                 </div>
 
-                <CommentSection />
-                <canvas id="canvas" className={styles.canvas}>
+                <Snowfall
+                  snowflakeCount={this.state.shitCount}
+                  radius={[30.0, 30.0]}
+                  // Pass in the images to be used
+                  images={[shit]}/>
 
-                </canvas>
+                <Snowfall
+                  snowflakeCount={this.state.fireCount}
+                  radius={[30.0, 30.0]}
+                  images={[fire]}/>
+
+                <Snowfall
+                  snowflakeCount={this.state.joyCount}
+                  radius={[30.0, 30.0]}
+                  images={[joy]}/>
+
+                <CommentSection/>
             </div>
         );
     }
