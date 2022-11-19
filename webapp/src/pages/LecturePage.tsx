@@ -8,13 +8,14 @@ const LecturePage = () => {
     const [videoTime, setVideoTime] = useState(0);
     const [query, setQuery] = useState('')
     const [outline, setOutline] = useState<any[]>([])
-    const [result, setResult] = useState<any>({
-        'timestamp': 0,
-        'text': '',
-    })
+    const [result, setResult] = useState<any>([])
 
     const handleChange = (event: any) => {
         setQuery(event.target.value);
+    }
+
+    const makeSeekFunction = (time: number) => {
+        return () => {videoRef.current.currentTime = time}
     }
 
     const handleSubmit = (event: any) => {
@@ -67,15 +68,30 @@ const LecturePage = () => {
                 <div className="LecturePage__outline">
                     <h3>Outline</h3>
                     {outline.map((item, index) => (
-                        <div className="LecturePage__outline__item" key={index}>
+                        <div className="LecturePage__outline__item" key={index} onClick={makeSeekFunction(item['timestamp'])}>
                             <div className="time">{secondsToHMinSec(item['timestamp'])}</div>
                             <div className="title">{item['title']}</div>
                         </div>
                     ))}
                 </div>
-                <div className="LecturePage__result">
-                    {result['text']}
-                </div>
+                {result.length > 0 && (
+                    <div className="LecturePage__result">
+                    <h3>Search results</h3>
+                    {result.map((item: any, index: any) => (
+                        <div 
+                            className="LecturePage__result__item" 
+                            key={index} 
+                        >
+                            <div className="time">
+                                <div className="badge">
+                                    {secondsToHMinSec(item['timestamp'])}
+                                </div>
+                            </div>
+                            <div className="text">{item['text']}</div>
+                        </div>
+                    ))}
+                    </div>
+                )}
                 <div className="LecturePage__search">
                     <TextField 
                         fullWidth 
