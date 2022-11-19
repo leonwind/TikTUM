@@ -4,6 +4,7 @@ import os
 # openai.api_key = os.getenv("OPENAI_API_KEY")
 openai.api_key = "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"
 
+
 def ask_question(question: str,
                  extra_information: str or None = None,
                  temperature: float = 0,

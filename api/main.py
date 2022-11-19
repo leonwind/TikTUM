@@ -19,8 +19,8 @@ def get_transcription(video_id: str, timestamp: int) -> str:
 def post_comment(video_id):
     username = request.form.get('username')
     comment = request.form.get('comment')
-    timestamp = int(request.form.get('timestamp'))
-    if not username or not comment or not timestamp:
+    timestamp = int(round(datetime.now().timestamp()))
+    if not username or not comment:
         return 'Missing parameters', 400
     # Parse question and get an answer from GPT-3 (if applicable)
     answer = None
@@ -33,7 +33,8 @@ def post_comment(video_id):
     with open(f'{COMMENTS_DIR}/{video_id}.txt', 'a+') as f:
         f.write(f'{username}\t{comment}\t{timestamp}\n')
         if answer:
-            f.write(f'TutorBot\t{answer}\t{int(round(datetime.now().timestamp()))}\n')
+            answer_timestamp = int(round(datetime.now().timestamp()))
+            f.write(f'TutorBot\t{answer}\t{answer_timestamp}\n')
 
     # Return success message
     return 'Successfully posted comment', 200
