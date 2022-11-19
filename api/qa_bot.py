@@ -1,3 +1,5 @@
+from typing import Optional
+
 import openai
 import os
 
@@ -6,12 +8,12 @@ openai.api_key = "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"
 
 
 def ask_question(question: str,
-                 extra_information: str or None = None,
+                 extra_information: Optional[str] = None,
                  temperature: float = 0,
                  max_tokens: int = 100,
                  top_p: float = 1,
                  frequency_penalty: float = 0,
-                 presence_penalty: float = 0) -> str or None:
+                 presence_penalty: float = 0) -> Optional[str]:
     prompt = "Answer this question"
     if extra_information:
         prompt += f" based on the following information: {extra_information}\n"
