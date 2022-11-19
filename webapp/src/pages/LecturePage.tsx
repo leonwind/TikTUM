@@ -1,26 +1,30 @@
 import lectureVid from "../static/dl_math_intro.mp4"
 import './LecturePage.scss'
 import { Button, TextField } from '@mui/material';
-import { LegacyRef, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const LecturePage = () => {
     const videoRef = useRef<any>();
     const [videoTime, setVideoTime] = useState(0);
     const [query, setQuery] = useState('')
     const [outline, setOutline] = useState<any[]>([])
-    const [resutl, setResult] = useState<any[]>([])
+    const [result, setResult] = useState<any>({
+        'timestamp': 0,
+        'text': '',
+    })
 
     const handleChange = (event: any) => {
         setQuery(event.target.value);
     }
 
     const handleSubmit = (event: any) => {
-        // fetch(`http://127.0.0.1:5000/lecture/id/search/${query}`)
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         setOutline(data['outline'])
-        //     }
-    }
+        fetch(`http://127.0.0.1:5000/lecture/id/search/${query}`)
+            .then(response => response.json())
+            .then(data => {
+                setResult(data)
+                setQuery('')
+            }
+    )}
 
     const fetchOutline = () => {
         fetch('http://127.0.0.1:5000/lecture/id/outline')
@@ -61,6 +65,7 @@ const LecturePage = () => {
 
             <div className="LecturePage__content">
                 <div className="LecturePage__outline">
+                    <h3>Outline</h3>
                     {outline.map((item, index) => (
                         <div className="LecturePage__outline__item" key={index}>
                             <div className="time">{secondsToHMinSec(item['timestamp'])}</div>
@@ -69,7 +74,7 @@ const LecturePage = () => {
                     ))}
                 </div>
                 <div className="LecturePage__result">
-                    {videoTime}
+                    {result['text']}
                 </div>
                 <div className="LecturePage__search">
                     <TextField 
