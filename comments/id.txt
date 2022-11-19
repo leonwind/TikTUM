@@ -63,6 +63,65 @@ student	very nice?	1668881880
 TutorBot	Thank you!	1668881882
 student	why do i not understand this?	1668881902
 TutorBot	There could be a number of reasons why you do not understand this. It could be that the material is too difficult, or that it is presented in a way that is confusing. It is also possible that you simply do not have enough background knowledge to understand the concept. If you are having trouble understanding something, it is important to ask for help from a teacher or tutor.	1668881907
+student	test	1668887413
+student	hello	1668887417
+student	why can't i eat a matrix vector multiplication?	1668887448
+TutorBot	There is no definitive answer to this question, as it depends on the specific matrix and vector involved. However, one potential reason why a matrix vector multiplication might not be possible is if the matrix is not invertible. In this case, the matrix cannot be multiplied by any vector to produce a valid result.	1668887453
+student	why can't i eat a matrix vector multiplication?	1668887443
+TutorBot	There is no definitive answer to this question, as it depends on the specific matrix and vector involved. However, one potential reason why a matrix vector multiplication might not be possible is if the matrix is not invertible. In this case, the matrix cannot be multiplied by any vector to produce a valid result.	1668887454
+student	Does this bot have extra information?	1668888484
+TutorBot	No, the bot does not have extra information.	1668888486
+student	Testing the bot?	1668888527
+TutorBot	This question is unclear.	1668888529
+student	Can I eat a matrix vector multiplication?	1668888555
+TutorBot	No, you cannot eat a matrix vector multiplication.	1668888556
+student	Why can't I eat a matrix vector multiplication?	1668888566
+TutorBot	You can't eat a matrix vector multiplication because it's not a food.	1668888569
+student	Why can't I eat a matrix vector multipliation?	1668888620
+TutorBot	You can't eat a matrix vector multiplication because it's not a food.	1668888622
+student	How do you perform a matrix vector multiplication?	1668888656
+TutorBot	In order to perform a matrix vector multiplication, you take the matrix and the vector and you lay the vector on top of the matrix. Then, you do a dot product with each row of the matrix.	1668888659
+student	f	1668889036
+student	tttt	1668889047
+student	test	1668889055
+student	test?	1668889060
+TutorBot	This is not a question.	1668889063
+student	test	1668889096
+student	test?	1668889101
+TutorBot	This is not a question.	1668889102
+student	Cool!	1668889110
+student	Cool!?	1668889114
+TutorBot	Yes, this is a valid way to multiply a matrix and a vector.	1668889117
+student	test	1668889147
+student	TEEEEEEST?	1668889340
+TutorBot	This question is unclear.	1668889342
+student	HENLO	1668889346
+student	heeeey	1668889394
+student	heyooo	1668889401
+student	wqefhuew	1668889405
+student	efew	1668889407
+student	I doubt this works..	1668889604
+student	does it?	1668889609
+TutorBot	No, it does not.	1668889611
+student	did this work?	1668889648
+TutorBot	No, this did not work.	1668889650
+student	nah	1668889653
+student	hhhhe	1668889701
+student	jhhd	1668889743
+student	ddd	1668889831
+student	ilwerhowerw	1668889841
+student	elhwieowe	1668889849
+student	did this work??	1668889888
+TutorBot	Yes, this worked.	1668889890
+student	na?	1668889948
+TutorBot	No, the answer is not na.	1668889949
+student	ths works!!!?	1668889999
+TutorBot	Yes, this works!	1668890001
+student	what is the hadamard product used for?	1668891521
+TutorBot	The Hadamard product is used for multiplying two matrices or two vectors element-wise.	1668891523
+student	what is the hadamard product used for in practice?	1668891546
+TutorBot	The Hadamard product is used in many different ways in mathematics and in various fields such as physics and engineering. One common use is to calculate the element-wise product of two vectors. This is often used when working with matrices, as it can be used to calculate the product of two matrices quickly and easily.	1668891550
+student	cool	1668892566
 student	what is a matrix?	1668894213
 TutorBot	A matrix is a rectangular array of numbers that is used to represent linear equations.	1668894215
 student	can i eat a small matrix vector multiplication?	1668894276
@@ -71,3 +130,14 @@ student	why cant i eat a small matrix vector multiplication?	1668894300
 TutorBot	There is no reason why you cannot eat a small matrix vector multiplication.	1668894301
 student	was jetzt?	1668894312
 TutorBot	I'm not sure what you're asking.	1668894313
+student	Nice!	1668900554
+student	You're one of my favorite lecturers :)	1668900569
+student	So glad I decided to take this course. Thanks for uploading this content!	1668900591
+student	Does anyone know what she means by dot product here?	1668900608
+student	What does she mean by dot product?	1668900645
+TutorBot	The dot product is a mathematical operation that takes two equal-length vectors and returns a single number.	1668900647
+student	If this is the matrix vector product, then what's the hadamard product?	1668900678
+TutorBot	The hadamard product is the element-wise product of two matrices.	1668900680
+student	Oh that makes sense...	1668900687
+student	What's an intuitive explanation of the dot product?	1668901180
+TutorBot	The dot product is a measure of how two vectors are aligned. It is the product of the magnitude of each vector and the cosine of the angle between them.	1668901183
