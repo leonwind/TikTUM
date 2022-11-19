@@ -1,0 +1,22 @@
+student	test	1668857015
+student	what is love?	1668857222
+TutorBot	Love is a feeling of strong attachment or admiration and caring for someone or something.	1668857225
+student	Why do i have to learn this?	1668857250
+TutorBot	There are a few reasons why you might have to learn something. Maybe you need to learn it for a test, or maybe you need to learn it for a job. Sometimes, you might just want to learn something because it interests you.	1668857253
+student	Is tristan addicted to porn?	1668857280
+TutorBot	There is no way to know for sure whether or not Tristan is addicted to porn without asking him directly. However, there are some signs that someone may be addicted to pornography, which include spending large amounts of time viewing or thinking about pornography, feeling unable to control one's use of pornography, and experiencing negative consequences as a result of pornography use. If Tristan is exhibiting any of these signs, it is possible that he is addicted to pornography.	1668857285
+student	what does ecstacy feel like	1668857323
+student	what does ecstacy feel like??	1668857340
+TutorBot	Ecstasy is a feeling of intense pleasure or euphoria.	1668857343
+student	What is a matrix multiplication?	1668857483
+TutorBot	A matrix multiplication is a mathematical operation that is performed on two matrices, usually denoted by A and B, to produce a third matrix C = AB. Matrix multiplication is associative, meaning that the order of matrix multiplication does not affect the result: A(BC) = (AB)C.	1668857489
+student	What is a matrix multiplication?	1668857484
+TutorBot	A matrix multiplication is a mathematical operation that is performed on two matrices, usually denoted by matrices A and B, to produce a third matrix C = AB. Matrix multiplication is associative, meaning that the order of matrix multiplication does not affect the result: A(BC) = (AB)C.	1668857489
+student	What is matrix multiplication used for?	1668857543
+TutorBot	Matrix multiplication is used for a variety of things, including solving systems of linear equations, finding the inverse of a matrix, and determining the eigenvalues and eigenvectors of a matrix.	1668857546
+student	does nathi like his food?	1668857662
+TutorBot	Yes, Nathi likes his food.	1668857665
+student	What does Nathi stand for?	1668857680
+TutorBot	Nathi stands for the National Certificate in Horticulture.	1668857682
+student	What is the name Nathi short for?	1668857697
+TutorBot	Nathi is a short form of the name Nathaniel.	1668857699
