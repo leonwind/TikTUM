@@ -56,7 +56,7 @@ export default function ImgMediaCard() {
       <CardMedia
         component="img"
         alt="hot prof"
-        height="500"
+        height="400px"
         image={prof}
       />
       <CardContent>
