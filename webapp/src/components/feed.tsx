@@ -11,7 +11,7 @@ import CommentSection from './CommentSection';
 
 export default function Feed() {
 
-  const conts = [matmatVid, matvecVid, hadamardVid, planetEarth];
+  const conts = [matvecVid, matmatVid, hadamardVid, planetEarth];
   const [showComments, setShowComments] = useState(false);
 
   const handleCommentToggle = () => {

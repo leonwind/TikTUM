@@ -17,19 +17,28 @@
     position: absolute;
     z-index: 2;
     left:15px;
-    bottom:25px;
+    bottom:90px;
     font-size: 250%;
 }
 
 .commentIcon {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+.replyIcon {
+    color: white;
+    font-size: large;
+    text-shadow: 1px 1px 1px black;
+}
+
+.speedIcon {
     color: white;
     font-size: large;
     text-shadow: 1px 1px 1px black;
 }
 
 .emoji {
-    width: 50px;
-    height: 30px;
 }
 
 .canvas {
@@ -42,4 +51,15 @@
     left:0%;
     resize:none;
     z-index: 9999;
+}
+
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    right:15px;
+    bottom:90px;
+    font-size: 250%;
 }

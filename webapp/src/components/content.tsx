@@ -8,6 +8,8 @@ import joyEmoji from "../static/joy-emoji.png"
 import shitEmoji from "../static/shit-emoji.png"
 import { IconButton } from "@mui/material";
 import CommentIcon from '@mui/icons-material/Comment';
+import ReplyIcon from '@mui/icons-material/Reply';
+import SpeedIcon from '@mui/icons-material/SlowMotionVideo';
 
 
 type Props = {
@@ -71,12 +73,19 @@ export const MediaCard = ({video, onToggleComments}: Props) => {
                 </video>
 
                 <div className={styles.emojis}>
-                    <IconButton color="inherit" aria-label="open drawer" onClick={onToggleComments}>
-                        <CommentIcon className={styles.commentIcon}/>
-                    </IconButton>
                     <div onClick={() => onEmojiyClick("fire")}>🔥</div>
                     <div onClick={() => onEmojiyClick("joy")}>😂</div>
                     <div onClick={() => onEmojiyClick("shit")}>💩</div>
+                </div>
+
+                <div className={styles.rightColumn}>
+                    <SpeedIcon className={styles.speedIcon} style={{fontSize: 35}}/>
+
+                    <ReplyIcon className={styles.replyIcon} style={{fontSize: 35}} />
+
+                    <IconButton color="inherit" aria-label="open drawer" onClick={onToggleComments}>
+                        <CommentIcon className={styles.commentIcon} style={{fontSize: 35}}/>
+                    </IconButton>
                 </div>
 
                 <Snowfall
