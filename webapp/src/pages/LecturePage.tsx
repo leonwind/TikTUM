@@ -10,6 +10,7 @@ const LecturePage = () => {
     const [query, setQuery] = useState('')
     const [outline, setOutline] = useState<any[]>([])
     const [result, setResult] = useState<any>([])
+    const resultsRef = useRef<any>()
 
     const handleChange = (event: any) => {
         setQuery(event.target.value);
@@ -45,6 +46,10 @@ const LecturePage = () => {
             .then(data => {
                 setResult(highlightText(data, query))
                 setQuery('')
+                setTimeout(() => {
+                    resultsRef.current.scrollIntoView({behavior: "smooth"})
+                    console.log(resultsRef.current)
+                }, 50)
             }
     )}
 
@@ -88,26 +93,26 @@ const LecturePage = () => {
                         </div>
                     ))}
                 </div>
-                {result.length > 0 && (
-                    <div className="LecturePage__result">
-                    <h3>Search results</h3>
-                    {result.map((item: any, index: any) => (
-                        <Link to='/feed' key={index}>
-                            <div className="LecturePage__result__item">
-                                <div className="time">
-                                    <div className="badge">
-                                        {secondsToHMinSec(item['timestamp'])}
-                                    </div>
+
+                <div className="LecturePage__result" ref={resultsRef}>
+                <h3>Search results</h3>
+                {result.map((item: any, index: any) => (
+                    <Link to='/feed' key={index}>
+                        <div className="LecturePage__result__item">
+                            <div className="time">
+                                <div className="badge">
+                                    {secondsToHMinSec(item['timestamp'])}
                                 </div>
-                                <div 
-                                    className="text" 
-                                    dangerouslySetInnerHTML={{__html: item['text']}}
-                                />
                             </div>
-                        </Link>
-                    ))}
-                    </div>
-                )}
+                            <div
+                                className="text"
+                                dangerouslySetInnerHTML={{__html: item['text']}}
+                            />
+                        </div>
+                    </Link>
+                ))}
+                </div>
+
                 <div className="LecturePage__search">
                     <TextField 
                         fullWidth 

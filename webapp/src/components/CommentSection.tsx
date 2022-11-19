@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import './CommentSection.scss'
 import { Button, TextField } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
@@ -11,6 +11,7 @@ const CommentSection = ({onClose}: CommentSectionProps) => {
     const [collapsed, setCollapsed] = useState(true)
     const [userComments, setUserComments] = useState([])
     const [comment, setComment] = useState('')
+    const commentSectionRef = useRef<any>()
 
     const handleCommentToggle = (event: any) => {
         setCollapsed(!collapsed)
@@ -25,11 +26,16 @@ const CommentSection = ({onClose}: CommentSectionProps) => {
             .then(response => response.json())
             .then(data => {
                 setUserComments(data['comments'])
+                setTimeout(() => {
+                    commentSectionRef.current.scrollTop += 100000000
+                }, 50)
             })
             .catch(error => console.log(error))
     }
 
     const postComment = (user: string, comment: string) => {
+        setComment('')
+        setUserComments([...userComments, {"username": user, "comment": comment} as never])
         fetch('http://127.0.0.1:5000/video/id/comment', {
             method: 'POST',
             headers: {
@@ -38,7 +44,6 @@ const CommentSection = ({onClose}: CommentSectionProps) => {
             body: `username=${user}&comment=${comment}`
         }).then(
             _ => {
-                setComment('')
                 fetchComments()
             }
         ).catch(error => console.log(error))
@@ -47,7 +52,12 @@ const CommentSection = ({onClose}: CommentSectionProps) => {
     
     const handleSubmit = (event: any) => {
         event.preventDefault()
-        postComment('student', comment)
+        if (comment !== '') {
+            postComment('student', comment)
+        }
+        setTimeout(() => {
+            commentSectionRef.current.scrollTop += 100000000
+        }, 50)
     }
 
     useEffect(() => {
@@ -55,7 +65,7 @@ const CommentSection = ({onClose}: CommentSectionProps) => {
     }, [])
 
     return (
-        <div className="CommentSection">
+        <div className="CommentSection" ref={commentSectionRef}>
             <main>
                 <div className='CommentSection__header'>
                     <h3>Comments</h3>
