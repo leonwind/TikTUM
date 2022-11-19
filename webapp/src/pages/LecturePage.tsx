@@ -27,11 +27,23 @@ const LecturePage = () => {
         return () => {videoRef.current.currentTime = time}
     }
 
+    const highlightText = (data: any, query: string) => {
+        for (let i = 0; i < data.length; i++) {
+            let text = data[i].text
+            let index = text.indexOf(query)
+            if (index !== -1) {
+                data[i].text = text.slice(0, index) + "<mark>" + text.slice(index, index + query.length) + "</mark>" + text.slice(index + query.length)
+            }
+        }
+        return data
+    }
+
+
     const handleSubmit = (event: any) => {
         fetch(`http://127.0.0.1:5000/lecture/id/search/${query}`)
             .then(response => response.json())
             .then(data => {
-                setResult(data)
+                setResult(highlightText(data, query))
                 setQuery('')
             }
     )}
@@ -87,7 +99,10 @@ const LecturePage = () => {
                                         {secondsToHMinSec(item['timestamp'])}
                                     </div>
                                 </div>
-                                <div className="text">{item['text']}</div>
+                                <div 
+                                    className="text" 
+                                    dangerouslySetInnerHTML={{__html: item['text']}}
+                                />
                             </div>
                         </Link>
                     ))}
