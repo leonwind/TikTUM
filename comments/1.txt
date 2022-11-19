@@ -1,0 +1,21 @@
+omar	Hey! Does this work? Cool!	12345
+anton	Piss off	12346
+tristan	What's a matrix multiplication?	12346
+tristan	What's a hadamard product?	12346
+tristan	What's a hadamard product?	12346
+tristan	What's a hadamard product?	12346
+tristan	What's a hadamard product?	12346
+tristan	What's a hadamard product?	12346
+tristan	What's a hadamard product?	12346
+tristan	What's a hadamard product?	12346
+tristan	What's a hadamard product?	12346
+tristan	What's a hadamard product?	12346
+tristan	What's a hadamard product?	12346
+tristan	What's a dot product?	12346
+TutorBot	A: A dot product is a mathematical operation that takes two equal-length vectors and returns a single number.	2022-11-19 11:51:03.905986
+tristan	Who is Mathias Niessner?	12346
+TutorBot	Mathias Niessner is a professor of computer science and engineering at the University of Michigan.	2022-11-19 11:53:16.523883
+leon	Where can you find the coolest video filters?	12346
+leon	Where can you find the coolest video filters?	12346
+leon	Where can you find the coolest video filters?	12346
+TutorBot	The coolest video filters can be found on the app TikTok.	1668855429
