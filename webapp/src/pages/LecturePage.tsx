@@ -31,7 +31,7 @@ const LecturePage = () => {
     const highlightText = (data: any, query: string) => {
         for (let i = 0; i < data.length; i++) {
             let text = data[i].text
-            let index = text.indexOf(query)
+            let index = text.toLowerCase().indexOf(query.toLowerCase())
             if (index !== -1) {
                 data[i].text = text.slice(0, index) + "<mark>" + text.slice(index, index + query.length) + "</mark>" + text.slice(index + query.length)
             }

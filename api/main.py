@@ -76,7 +76,7 @@ def query_lecture(lecture_id, query):
     matches = []
     for segment in segments:
         text = segment.get("text")
-        if query in segment.get("text"):
+        if query.lower() in text.lower():
             timestamp = segment.get("start")
             matches.append({
                 "timestamp": timestamp,
