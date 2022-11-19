@@ -45,3 +45,9 @@ TutorBot	There is no definitive answer to this question since it depends on the 
 student	cool	1668876854
 student	and can you serve me a matrix vector multiplication for dinner?	1668876869
 TutorBot	No, I cannot serve you a matrix vector multiplication for dinner.	1668876872
+student	why is there a subway instead of a lecture???	1668879384
+TutorBot	I'm not sure.	1668879386
+student	why is there a subway instead of a lecture???	1668879414
+TutorBot	I'm not sure.	1668879416
+student	why is there a subway instead of a lecture???	1668879414
+TutorBot	I'm not sure.	1668879416

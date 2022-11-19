@@ -24,6 +24,7 @@ import CommentSection from "./CommentSection";
 
 import logo from "../static/tiktum.png";
 import styles from "../styles/footer.module.css";
+import { Link } from 'react-router-dom';
 
 const StyledFab = styled(Fab)({
   position: 'absolute',
@@ -43,12 +44,14 @@ export const Footer = () => {
       <CssBaseline />
       <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
         <Toolbar>
-          <IconButton color="inherit" aria-label="open drawer">
-            <CommentIcon onClick={() => {setShowComments(!showComments)}}/>
+          <IconButton color="inherit" aria-label="open drawer" onClick={() => {setShowComments(!showComments)}}>
+            <CommentIcon />
           </IconButton>
-          <StyledFab  color="secondary" aria-label="add" href={"/"}>
-              <img src={logo} alt="logo" width="50px" height="50px" className={styles.img}/>
-          </StyledFab>
+          <Link to='/'>
+            <StyledFab  color="secondary" aria-label="add">
+                <img src={logo} alt="logo" width="50px" height="50px" className={styles.img}/>
+            </StyledFab>
+          </Link>
           <Box sx={{ flexGrow: 1 }} />
           <IconButton color="inherit">
             <SearchIcon />
