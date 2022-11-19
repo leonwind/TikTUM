@@ -1,34 +1,45 @@
 import lectureVid from "../static/dl_math_intro.mp4"
 import './LecturePage.scss'
 import { Button, TextField } from '@mui/material';
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const LecturePage = () => {
+    const videoRef = useRef<any>();
+    const [videoTime, setVideoTime] = useState(0);
     const [query, setQuery] = useState('')
     const [outline, setOutline] = useState<any[]>([])
+    const [result, setResult] = useState<any>([])
 
     const handleChange = (event: any) => {
         setQuery(event.target.value);
     }
 
-    const handleSubmit = (event: any) => {
-        event.preventDefault()
-        console.log(query)
+    const handleProgress = (event: any) => {
+        if (isNaN(event.target.duration)) {
+            setVideoTime(0)
+            return
+        }
+        setVideoTime(event.target.currentTime)
     }
 
+    const makeSeekFunction = (time: number) => {
+        return () => {videoRef.current.currentTime = time}
+    }
+
+    const handleSubmit = (event: any) => {
+        fetch(`http://127.0.0.1:5000/lecture/id/search/${query}`)
+            .then(response => response.json())
+            .then(data => {
+                setResult(data)
+                setQuery('')
+            }
+    )}
+
     const fetchOutline = () => {
-        setOutline([
-            {'timestamp': 0, 'title': 'Introduction'},
-            {'timestamp': 64, 'title': 'Linear Algebra'},
-            {'timestamp': 280, 'title': 'Calculus'},
-            {'timestamp': 589, 'title': 'Probability'},
-            {'timestamp': 1000, 'title': 'Optimization'},
-            {'timestamp': 1200, 'title': 'Convex Optimization'},
-            {'timestamp': 1400, 'title': 'Linear Optimization'},
-            {'timestamp': 1600, 'title': 'Duality'},
-            {'timestamp': 1800, 'title': 'Convex Sets'},
-            {'timestamp': 2000, 'title': 'Convex Functions'},
-        ])
+        fetch('http://127.0.0.1:5000/lecture/id/outline')
+            .then(response => response.json())
+            .then(data => setOutline(data))
+            .catch(error => console.log(error))
     }
 
     const zeroPad = (num: number, places: number) => String(num).padStart(places, '0')
@@ -47,21 +58,37 @@ const LecturePage = () => {
     return (
         <div className="LecturePage">
             <div className="LecturePage__video">
-               <video src={lectureVid} controls/>
+               <video src={lectureVid} controls ref={videoRef} onProgress={handleProgress} />
             </div>
 
             <div className="LecturePage__content">
                 <div className="LecturePage__outline">
+                    <h3>Outline</h3>
                     {outline.map((item, index) => (
-                        <div className="LecturePage__outline__item" key={index}>
+                        <div className="LecturePage__outline__item" key={index} onClick={makeSeekFunction(item['timestamp'])}>
                             <div className="time">{secondsToHMinSec(item['timestamp'])}</div>
                             <div className="title">{item['title']}</div>
                         </div>
                     ))}
                 </div>
-                <div className="LecturePage__result">
-                    iosihiohdo
-                </div>
+                {result.length > 0 && (
+                    <div className="LecturePage__result">
+                    <h3>Search results</h3>
+                    {result.map((item: any, index: any) => (
+                        <div 
+                            className="LecturePage__result__item" 
+                            key={index} 
+                        >
+                            <div className="time">
+                                <div className="badge">
+                                    {secondsToHMinSec(item['timestamp'])}
+                                </div>
+                            </div>
+                            <div className="text">{item['text']}</div>
+                        </div>
+                    ))}
+                    </div>
+                )}
                 <div className="LecturePage__search">
                     <TextField 
                         fullWidth 

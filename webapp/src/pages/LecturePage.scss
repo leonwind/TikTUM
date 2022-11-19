@@ -16,8 +16,15 @@
         align-content: flex-end;
 
         .LecturePage__outline {
+            margin-bottom: 2em;
             display: flex;
             flex-direction: column;
+
+            h3 {
+                text-align: left;
+                margin: 0;
+                padding: 0;
+            }
 
             .LecturePage__outline__item {
                 display: flex;
@@ -32,14 +39,54 @@
 
                     margin-right: 0.5em;
                 }
+
+                .title {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow-x: hidden;
+                }
             }
         }
 
         .LecturePage__result {
             text-align: left;
+            margin-bottom: 2em;
+
+            h3 {
+                text-align: left;
+                margin: 0;
+                padding: 0;
+            }
+
+            .LecturePage__result__item {
+                display: flex;
+                flex-direction: column;
+                margin: 0.5em 0.2em;
+
+
+                .time {
+                    font-family: Courier, monospace;
+                    margin-right: 0.5em;
+
+                    .badge {
+                        padding: 0 0.1em;
+                        background-color: #ddd;
+                        border-radius: 3px;
+                        width: 70px;
+                    }
+                }
+
+                .title {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow-x: hidden;
+                }
+            }
+
         }
 
         .LecturePage__search {
+            background-color: white;
             position: sticky;
             bottom: 1em;
             display: flex;
