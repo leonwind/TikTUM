@@ -8,18 +8,22 @@ const LecturePage = () => {
     const [videoTime, setVideoTime] = useState(0);
     const [query, setQuery] = useState('')
     const [outline, setOutline] = useState<any[]>([])
+    const [resutl, setResult] = useState<any[]>([])
 
     const handleChange = (event: any) => {
         setQuery(event.target.value);
     }
 
     const handleSubmit = (event: any) => {
-        event.preventDefault()
-        console.log(query)
+        // fetch(`http://127.0.0.1:5000/lecture/id/search/${query}`)
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         setOutline(data['outline'])
+        //     }
     }
 
     const fetchOutline = () => {
-        fetch('http://127.0.0.1:5000/video/id/outline')
+        fetch('http://127.0.0.1:5000/lecture/id/outline')
             .then(response => response.json())
             .then(data => setOutline(data))
             .catch(error => console.log(error))
