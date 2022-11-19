@@ -16,6 +16,7 @@ VIDEOS_DIR = 'videos'
 FRAMES_DIR = 'frames'
 FPS = 25.0
 TRANSCRIPTION_DIR = "transcriptions"
+OUTLINES_DIR = 'outlines'
 
 
 def get_transcription(video_id) -> dict:
@@ -83,6 +84,11 @@ def query_lecture(video_id, query):
 
 @app.route('/video/<video_id>/outline', methods=['GET'])
 def lecture_outline(video_id):
+    outline_path = os.path.join(OUTLINES_DIR, video_id + ".json")
+    if os.path.exists(outline_path):
+        with open(outline_path, "r") as f:
+            return json.load(f)
+
     frames_path = f'{FRAMES_DIR}/{video_id}'
     if not os.path.exists(frames_path):
         return 'Video does not exist', 404
@@ -99,4 +105,8 @@ def lecture_outline(video_id):
             })
             titles.append(title)
 
-    return sorted(outline, key=lambda outline_element: outline_element["timestamp"])
+    result = sorted(outline, key=lambda outline_element: outline_element["timestamp"])
+    with open(outline_path, 'w') as f:
+        json.dump(result, f)
+
+    return result
