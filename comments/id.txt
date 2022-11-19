@@ -28,3 +28,7 @@ student	Why are you gae?	1668858387
 TutorBot	I'm not sure what you're asking.	1668858389
 student	what is love?	1668858482
 TutorBot	Love is a feeling of strong attachment or admiration and caring for someone or something.	1668858484
+student	what is this lecture about?	1668871909
+TutorBot	This lecture is about the history of the English language.	1668871912
+student	why is a subway in this lecture?	1668872013
+TutorBot	There is no clear answer, but one possibility is that the subway is meant to symbolize the underground or hidden aspects of the city.	1668872017

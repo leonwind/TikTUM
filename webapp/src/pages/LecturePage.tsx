@@ -1,4 +1,4 @@
-import lectureVid from "../static/dl_math_intro.mp4"
+import lectureVid from "../static/lecture_small.mp4"
 import './LecturePage.scss'
 import { Button, TextField } from '@mui/material';
 import { useEffect, useRef, useState } from "react";
