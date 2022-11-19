@@ -1,0 +1,23 @@
+.body {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.buttons {
+    position: absolute;
+    z-index: 99999;
+    right:10px;
+    top:3em;
+}
+
+.emojis {
+    position: absolute;
+    z-index: 99999;
+    left:10px;
+    top:3em;
+}
+
+.emoji {
+    width: 50px;
+    height: 30px;
+}
