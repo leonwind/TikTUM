@@ -21,8 +21,10 @@ export default function Feed() {
   return (
     <div>
       <Stack
-          className={styles.container}
-          dir="ltr"
+        direction="column"
+        justifyContent="flex-start"
+        alignItems="center"
+        className={styles.container}
       >
         {conts.map((video, idx) =>
             <MediaCard key={idx} video={video} onToggleComments={handleCommentToggle}/>

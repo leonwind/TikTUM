@@ -1,29 +1,23 @@
 .body {
     position: relative;
     width: 100vw;
+    max-width: 600px;
     height: 100vh;
+    min-height: 100vh;
     scroll-snap-align: start;
-    background-color: black;
 }
 
 .video {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-}
-
-.buttons {
-    color: white;
-    position: absolute;
-    right:10px;
-    bottom:80px;
 }
 
 .emojis {
     position: absolute;
     z-index: 2;
-    left:10px;
-    bottom:80px;
+    left:15px;
+    bottom:25px;
     font-size: 250%;
 }
 
